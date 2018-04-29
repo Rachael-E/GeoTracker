@@ -10,6 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class GeoInfoTest {
 
     GeoInfo geoInfo1;
+    WayPoints waypoint1;
     RockType rocktype1;
     RockType rocktype2;
     ArrayList<RockType> rockList;
@@ -21,6 +22,7 @@ public class GeoInfoTest {
         rockList = new ArrayList<RockType>();
         rockList.add(rocktype1);
         rockList.add(rocktype2);
+        waypoint1 = new WayPoints("Turn left at the fallen boulder");
         geoInfo1 = new GeoInfo("This is a test for geological info", rockList);
 
     }
@@ -38,6 +40,11 @@ public class GeoInfoTest {
     @Test
     public void geoInfoRockTypeHasType(){
         assertEquals("Basalt", geoInfo1.getRockTypes().get(0).getRockType());
+    }
+
+    @Test
+    public void wayPointHasDescription(){
+        assertEquals("Turn left at the fallen boulder", waypoint1.getDescription());
     }
 
 
