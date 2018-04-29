@@ -6,11 +6,13 @@ public class GeoTracker {
 
     private ArrayList<GeoExcursion> geoExcursions;
     private ArrayList<GeoExcursion> completedGeoExcursions;
-    private int counter;
+    private int walksCompleted;
+    private int pointsCollected;
 
-    public GeoTracker(ArrayList<GeoExcursion> geoExcursions, int counter){
+    public GeoTracker(ArrayList<GeoExcursion> geoExcursions, int walksCompleted, int pointsCollected){
         this.geoExcursions = new ArrayList<>(geoExcursions);
-        this.counter = counter;
+        this.walksCompleted = walksCompleted;
+        this.pointsCollected = pointsCollected;
         this.completedGeoExcursions = new ArrayList<>();
     }
 
@@ -22,12 +24,16 @@ public class GeoTracker {
         geoExcursions.add(geoExcursionToAdd);
     }
 
-    public int getCounter() {
-        return counter;
+    public int getWalksCompleted() {
+        return walksCompleted;
     }
 
     public void setCounter(int counter) {
-        this.counter = counter;
+        this.walksCompleted = counter;
+    }
+
+    public int getPointsCollected() {
+        return pointsCollected;
     }
 
     public ArrayList<GeoExcursion> getCompletedGeoExcursions() {
@@ -36,7 +42,8 @@ public class GeoTracker {
 
     public void addToCompletedGeoExcursions(GeoExcursion geoExcursion){
         completedGeoExcursions.add(geoExcursion);
-        counter += 1;
+        walksCompleted += 1;
+        pointsCollected += geoExcursion.getExcursionType().getActivityPoints();
     }
 
     public void removeCompletedGeoExcursion(GeoExcursion geoExcursion){

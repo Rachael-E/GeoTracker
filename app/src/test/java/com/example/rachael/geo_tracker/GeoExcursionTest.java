@@ -60,7 +60,7 @@ public class GeoExcursionTest {
         geoExcursionList1 = new ArrayList<>();
         geoExcursionList1.add(geoExcursion1);
 
-        geoTracker1 = new GeoTracker(geoExcursionList1, 0);
+        geoTracker1 = new GeoTracker(geoExcursionList1, 0, 0);
 
 
 
@@ -94,13 +94,18 @@ public class GeoExcursionTest {
 
     @Test
     public void geoTrackerHasCount(){
-        assertEquals(0, geoTracker1.getCounter());
+        assertEquals(0, geoTracker1.getWalksCompleted());
+    }
+
+    @Test
+    public void geoTrackerHasPoints(){
+        assertEquals(0, geoTracker1.getPointsCollected());
     }
 
     @Test
     public void canSetCounter(){
         geoTracker1.setCounter(50);
-        assertEquals(50, geoTracker1.getCounter());
+        assertEquals(50, geoTracker1.getWalksCompleted());
     }
 
     @Test
@@ -119,7 +124,9 @@ public class GeoExcursionTest {
         geoTracker1.addToCompletedGeoExcursions(geoExcursion1);
         geoTracker1.addToCompletedGeoExcursions(geoExcursion2);
         assertEquals(2, geoTracker1.getCompletedGeoExcursions().size());
-        assertEquals(2, geoTracker1.getCounter());
+        assertEquals(2, geoTracker1.getWalksCompleted());
+        assertEquals(100, geoTracker1.getPointsCollected());
+
     }
 
     @Test
