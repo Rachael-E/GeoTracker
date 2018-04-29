@@ -1,6 +1,7 @@
 package com.example.rachael.geo_tracker;
 
-import java.lang.reflect.Array;
+import com.example.rachael.geo_tracker.Types.ActivityType;
+
 import java.util.ArrayList;
 
 public class GeoExcursion {

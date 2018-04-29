@@ -1,7 +1,9 @@
-package com.example.rachael.geo_tracker;
+package com.example.rachael.geo_tracker.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.rachael.geo_tracker.R;
 
 public class HomeActivity extends AppCompatActivity {
 

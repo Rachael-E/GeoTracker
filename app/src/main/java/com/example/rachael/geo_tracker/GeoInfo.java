@@ -1,5 +1,8 @@
 package com.example.rachael.geo_tracker;
 
+import com.example.rachael.geo_tracker.Types.EraType;
+import com.example.rachael.geo_tracker.Types.RockType;
+
 import java.util.ArrayList;
 
 public class GeoInfo {
