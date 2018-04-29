@@ -1,5 +1,6 @@
 package com.example.rachael.geo_tracker;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class GeoExcursion {
@@ -7,13 +8,13 @@ public class GeoExcursion {
     private String title;
     private ArrayList<GeoInfo> geologyInfo;
     private ArrayList<WayPoints> wayPoints;
-    private ActivityType activityType;
+    private ActivityType excursionType;
 
-    public GeoExcursion (String title, ArrayList<GeoInfo> geologyInfo, ArrayList<WayPoints> wayPoints, ActivityType activityType){
+    public GeoExcursion (String title, ArrayList<GeoInfo> geologyInfo, ArrayList<WayPoints> wayPoints, ActivityType excursionType){
         this.title = title;
-        this.geologyInfo = new ArrayList<GeoInfo>();
-        this.wayPoints = new ArrayList<WayPoints>();
-        this.activityType = activityType;
+        this.geologyInfo = new ArrayList<>();
+        this.wayPoints = new ArrayList<>();
+        this.excursionType = excursionType;
 
     }
 
@@ -30,7 +31,7 @@ public class GeoExcursion {
     }
 
 
-    public ActivityType getActivityType() {
-        return activityType;
+    public ActivityType getExcursionType() {
+        return excursionType;
     }
 }

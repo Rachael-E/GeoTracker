@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
-public class GeoActivityTest {
+public class GeoExcursionTest {
 
     GeoInfo geoInfo1;
     ArrayList<GeoInfo> geoInfoList;
@@ -24,6 +24,7 @@ public class GeoActivityTest {
     ArrayList<EraType> eraList;
 
     ActivityType activityType1;
+
     GeoExcursion geoExcursion1;
 
     @Before
@@ -41,7 +42,7 @@ public class GeoActivityTest {
         geoInfo1 = new GeoInfo(eraList, rockList);
         geoInfoList = new ArrayList<GeoInfo>();
         geoInfoList.add(geoInfo1);
-
+//---------------------------------------------------------------------------------
         waypoint1 = new WayPoints("Turn left at the fallen boulder");
         waypoint2 = new WayPoints("Follow the path to the coastline");
         wayPointList = new ArrayList<WayPoints>();
@@ -57,6 +58,27 @@ public class GeoActivityTest {
     @Test
     public void geoExcursionHasTitle(){
         assertEquals("The Fossil Tree", geoExcursion1.getTitle());
+    }
+
+    @Test
+    public void howManyInGeoInfoList(){
+        assertEquals(1, geoInfoList.size());
+        assertEquals("Basalt", geoInfoList.get(0).getRockTypes().get(0).getRockType());
+    }
+
+    @Test
+    public void howManyInWayPointList(){
+        assertEquals(2, wayPointList.size());
+    }
+
+    @Test
+    public void geoExcursionHasWayPointList(){
+        assertEquals(7, geoExcursion1.getWayPoints().size());
+    }
+
+    @Test
+    public void geoExcursionHasActivityType(){
+        assertEquals("Walking activity", geoExcursion1.getExcursionType().getActivityType());
     }
 
 
