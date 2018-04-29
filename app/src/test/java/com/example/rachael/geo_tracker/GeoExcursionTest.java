@@ -7,21 +7,29 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
-public class GeoInfoTest {
+public class GeoActivityTest {
 
     GeoInfo geoInfo1;
+    ArrayList<GeoInfo> geoInfoList;
+
     WayPoints waypoint1;
+    WayPoints waypoint2;
+    ArrayList<WayPoints> wayPointList;
+
     RockType rocktype1;
     RockType rocktype2;
     ArrayList<RockType> rockList;
+
     EraType eraType1;
     ArrayList<EraType> eraList;
+
+    ActivityType activityType1;
+    GeoExcursion geoExcursion1;
 
     @Before
     public void before(){
         rocktype1 = RockType.BASALT;
         rocktype2 = RockType.SANDSTONE;
-
         rockList = new ArrayList<RockType>();
         rockList.add(rocktype1);
         rockList.add(rocktype2);
@@ -31,37 +39,25 @@ public class GeoInfoTest {
         eraList.add(eraType1);
 
         geoInfo1 = new GeoInfo(eraList, rockList);
+        geoInfoList = new ArrayList<GeoInfo>();
+        geoInfoList.add(geoInfo1);
 
         waypoint1 = new WayPoints("Turn left at the fallen boulder");
+        waypoint2 = new WayPoints("Follow the path to the coastline");
+        wayPointList = new ArrayList<WayPoints>();
+        wayPointList.add(waypoint1);
+        wayPointList.add(waypoint2);
+
+        activityType1 = ActivityType.WALK;
+
+        geoExcursion1 = new GeoExcursion("The Fossil Tree", geoInfoList, wayPointList, activityType1);
 
     }
 
     @Test
-    public void eraExists(){
-        assertEquals("Palaeogene", eraList.get(0).getGeologyPeriod());
+    public void geoExcursionHasTitle(){
+        assertEquals("The Fossil Tree", geoExcursion1.getTitle());
     }
-
-    @Test
-    public void geoInfoEraInfo(){
-        assertEquals("Palaeogene", geoInfo1.getEraTypes().get(0).getGeologyPeriod());
-    }
-
-    @Test
-    public void geoInfoHasRockTypes(){
-        assertEquals(2, geoInfo1.getRockTypes().size());
-    }
-
-    @Test
-    public void geoInfoRockTypeHasType(){
-        assertEquals("Basalt", geoInfo1.getRockTypes().get(0).getRockType());
-    }
-
-    @Test
-    public void wayPointHasDescription(){
-        assertEquals("Turn left at the fallen boulder", waypoint1.getDescription());
-    }
-
-
 
 
 }

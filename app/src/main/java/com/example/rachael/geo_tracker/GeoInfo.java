@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public class GeoInfo {
 
-    private String geoInfoSummary;
+    private ArrayList<EraType> eraTypes;
     private ArrayList<RockType> rockTypes;
 
-    public GeoInfo (String geoInfoSummary, ArrayList<RockType> rockTypes){
-        this.geoInfoSummary = geoInfoSummary;
+    public GeoInfo (ArrayList<EraType> eraTypes, ArrayList<RockType> rockTypes){
+        this.eraTypes = new ArrayList<>(eraTypes);
         this.rockTypes = new ArrayList<>(rockTypes);
     }
 
-    public String getGeoInfoSummary() {
-        return geoInfoSummary;
+    public ArrayList<EraType> getEraTypes() {
+        return eraTypes;
     }
 
     public ArrayList<RockType> getRockTypes() {
