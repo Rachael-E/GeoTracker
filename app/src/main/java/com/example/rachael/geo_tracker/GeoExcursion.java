@@ -12,8 +12,8 @@ public class GeoExcursion {
 
     public GeoExcursion (String title, ArrayList<GeoInfo> geologyInfo, ArrayList<WayPoints> wayPoints, ActivityType excursionType){
         this.title = title;
-        this.geologyInfo = new ArrayList<>();
-        this.wayPoints = new ArrayList<>();
+        this.geologyInfo = new ArrayList<>(geologyInfo);
+        this.wayPoints = new ArrayList<>(wayPoints);
         this.excursionType = excursionType;
 
     }

@@ -26,32 +26,41 @@ public class GeoExcursionTest {
     ActivityType activityType1;
 
     GeoExcursion geoExcursion1;
+    ArrayList<GeoExcursion> geoExcursionList;
+
+    GeoTracker geoTracker1;
 
     @Before
     public void before(){
         rocktype1 = RockType.BASALT;
         rocktype2 = RockType.SANDSTONE;
-        rockList = new ArrayList<RockType>();
+        rockList = new ArrayList<>();
         rockList.add(rocktype1);
         rockList.add(rocktype2);
 
         eraType1 = EraType.PALAEOGENE;
-        eraList = new ArrayList<EraType>();
+        eraList = new ArrayList<>();
         eraList.add(eraType1);
 
         geoInfo1 = new GeoInfo(eraList, rockList);
-        geoInfoList = new ArrayList<GeoInfo>();
+        geoInfoList = new ArrayList<>();
         geoInfoList.add(geoInfo1);
 //---------------------------------------------------------------------------------
         waypoint1 = new WayPoints("Turn left at the fallen boulder");
         waypoint2 = new WayPoints("Follow the path to the coastline");
-        wayPointList = new ArrayList<WayPoints>();
+        wayPointList = new ArrayList<>();
         wayPointList.add(waypoint1);
         wayPointList.add(waypoint2);
 
         activityType1 = ActivityType.WALK;
 
         geoExcursion1 = new GeoExcursion("The Fossil Tree", geoInfoList, wayPointList, activityType1);
+        geoExcursionList = new ArrayList<>();
+        geoExcursionList.add(geoExcursion1);
+
+        geoTracker1 = new GeoTracker(geoExcursionList, 0);
+
+
 
     }
 
@@ -73,13 +82,25 @@ public class GeoExcursionTest {
 
     @Test
     public void geoExcursionHasWayPointList(){
-        assertEquals(7, geoExcursion1.getWayPoints().size());
+        assertEquals(2, geoExcursion1.getWayPoints().size());
     }
 
     @Test
     public void geoExcursionHasActivityType(){
         assertEquals("Walking activity", geoExcursion1.getExcursionType().getActivityType());
     }
+
+    @Test
+    public void geoTrackerHasCount(){
+        assertEquals(0, geoTracker1.getCounter());
+    }
+
+    @Test
+    public void geoTrackerHasExcursion(){
+        assertEquals(1, geoTracker1.getGeoExcursions().size());
+    }
+
+
 
 
 }
