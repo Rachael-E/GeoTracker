@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">geo_tracker</string>
+    <string name="app_name">GeoTrax</string>
+    <string name="welcome_text">Find and track geological walks with GeoTrax! Tap Find a Walk to look for a geology walk to complete.</string>
+    <string name="view_walk_button">Find a Walk</string>
+    <string name="view_completed_walks_button">View Completed Walks</string>
+    <string name="new_walk_button">Add Your Own Walk!</string>
 </resources>
