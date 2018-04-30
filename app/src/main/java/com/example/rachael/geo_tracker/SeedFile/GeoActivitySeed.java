@@ -20,6 +20,7 @@ public class GeoActivitySeed {
 
     public GeoActivitySeed() {
 
+        // adding rock types to the rockList array list for feeding into GeoInfo. Naming based on which walk they will belong to (Fossil = "The Fossil Tree", Arches = "Carsaig Arches").
         RockType rocktype1 = RockType.BASALT;
         RockType rocktype2 = RockType.SANDSTONE;
         ArrayList<RockType> rockListFossil = new ArrayList<>();
@@ -28,6 +29,7 @@ public class GeoActivitySeed {
         rockListArches.add(rocktype2);
         rockListArches.add(rocktype1);
 
+        // adding geological eras to the eraList array list for feeding into GeoInfo. Naming based on which walk they will belong to (Fossil = "The Fossil Tree", Arches = "Carsaig Arches").
         EraType eraType1 = EraType.PALAEOGENE;
         EraType eraType2 = EraType.JURASSIC;
         EraType eraType3 = EraType.TRIASSIC;
@@ -38,6 +40,7 @@ public class GeoActivitySeed {
         eraListArches.add(eraType2);
         eraListArches.add(eraType3);
 
+        // populating GeoInfo with eraList and rockList array lists. Naming based on which walk they will belong to (Fossil = "The Fossil Tree", Arches = "Carsaig Arches").
         GeoInfo geoInfoFossil = new GeoInfo(eraListFossil, rockListFossil);
         GeoInfo geoInfoArches = new GeoInfo(eraListArches, rockListArches);
         ArrayList<GeoInfo> geoInfoListFossil = new ArrayList<>();
@@ -45,9 +48,10 @@ public class GeoActivitySeed {
         geoInfoListFossil.add(geoInfoFossil);
         geoInfoListArches.add(geoInfoArches);
 
-        WayPoints waypoint1 = new WayPoints("Turn left at the fallen boulder by the Oak Tree");
-        WayPoints waypoint2 = new WayPoints("Follow the path to the coastline");
-        WayPoints waypoint3 = new WayPoints("Descend the rusty iron ladder to the pebble beach below. Don't worry, it's quite safe!");
+        // inserting way points for each walk. Naming based on which walk they will belong to (Fossil = "The Fossil Tree", Arches = "Carsaig Arches").
+        WayPoints waypoint1 = new WayPoints("Once on the main path, turn left at the fallen boulder by the Oak Tree and admire the basalt cliffs on your right. These formed as a result of volcanic activity 65 million years ago. Look carefully and you will see individual basalt layers, each representing individual eruptions from the many volcanoes once present in the area.");
+        WayPoints waypoint2 = new WayPoints("Follow the path to the coastline. The path soon leaves the beach and continues across a number of debris fans. Care should be taken as loose rock is still actively falling. You may find small samples of zeolites in the fallen blocks of basalt from the cliffs above. Continue for many miles (keep an eye out for sandstones on the shore platform) and you will find the Carsaig Arches: sea stacks composed of basalt.");
+        WayPoints waypoint3 = new WayPoints("Descend the rusty iron ladder to the pebble beach below. Don't worry, it's quite safe! Continue along the beach until you reach a rocky platform: beyond this in the next bay you will see a waterfall. To the right of the waterfall is MacCulloch's Fossil Tree: an astonishingly well preserved upright tree encased completely in lava.");
         ArrayList<WayPoints> wayPointListFossil = new ArrayList<>();
         ArrayList<WayPoints> wayPointListArches = new ArrayList<>();
         wayPointListFossil.add(waypoint1);
@@ -55,15 +59,18 @@ public class GeoActivitySeed {
         wayPointListArches.add(waypoint1);
         wayPointListArches.add(waypoint2);
 
+        // inserting excursion type for each walk. Naming based on which walk they will belong to (Fossil = "The Fossil Tree", Arches = "Carsaig Arches").
         ExcursionType excursionTypeFossil = ExcursionType.WALK;
         ExcursionType excursionTypeArches = ExcursionType.WALK;
 
+        // creating an empty list to add Geoexcursions to. Naming based on which walk they will belong to (Fossil = "The Fossil Tree", Arches = "Carsaig Arches").
         list = new ArrayList<>();
         list.add(new GeoExcursion("The Fossil Tree", geoInfoListFossil, wayPointsFossil, excursionTypeFossil, false));
         list.add(new GeoExcursion("The Carsaig Arches", geoInfoListArches, wayPointsArches, excursionTypeArches, false));
 
     }
 
+    // method to return the list of all geoExcursions
     public ArrayList<GeoExcursion> getList() {
         return new ArrayList<>(list);
     }

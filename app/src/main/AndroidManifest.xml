@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.FindWalkActivity"></activity>
+        <activity android:name=".Activities.FindWalkActivity" />
+        <activity android:name=".Activities.ExcursionDetailActivity"></activity>
     </application>
 
 </manifest>
