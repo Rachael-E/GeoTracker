@@ -45,6 +45,7 @@
             android:id="@+id/findAWalkButtonId"
             android:layout_width="match_parent"
             android:layout_height="63dp"
+            android:onClick="onMakeChoiceButtonClicked"
             android:text="@string/view_walk_button"
             app:layout_constraintBottom_toTopOf="@+id/viewCompletedWalksButtonId"
             app:layout_constraintEnd_toEndOf="parent"

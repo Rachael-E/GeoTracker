@@ -28,10 +28,12 @@ public class ExcursionSeedAdapter extends ArrayAdapter<GeoExcursion> {
         GeoExcursion currentExcursion = getItem(position);
 
         TextView excursionTitle = listItemView.findViewById(R.id.excursionTitleTextViewId);
-        excursionTitle.setText(currentExcursion.getTitle().toString());
+        excursionTitle.setText(currentExcursion.getTitle());
 
         TextView excursionType = listItemView.findViewById(R.id.excursionTypeViewId);
-        excursionType.setText(currentExcursion.getExcursionType().getActivityType().toString());
+        excursionType.setText(currentExcursion.getExcursionType().getActivityType());
+
+        listItemView.setTag(currentExcursion);
 
         //ImageView excursionImage
 

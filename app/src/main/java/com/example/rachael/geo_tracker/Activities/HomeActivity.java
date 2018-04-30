@@ -1,5 +1,6 @@
 package com.example.rachael.geo_tracker.Activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,7 +29,10 @@ public class HomeActivity extends AppCompatActivity {
     public void onMakeChoiceButtonClicked(View button){
         Log.d(getClass().toString(), "onFindWalkButton was called");
 
-        
+        Intent intent = new Intent( this, FindWalkActivity.class);
+
+//        intent.putExtra("excursions", excursions);
+        startActivity(intent);
     }
 }
 
