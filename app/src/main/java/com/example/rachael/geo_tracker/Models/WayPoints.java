@@ -1,6 +1,8 @@
 package com.example.rachael.geo_tracker.Models;
 
-public class WayPoints {
+import java.io.Serializable;
+
+public class WayPoints implements Serializable{
 
     private String description;
 

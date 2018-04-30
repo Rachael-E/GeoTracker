@@ -3,6 +3,7 @@ package com.example.rachael.geo_tracker.Activities;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.example.rachael.geo_tracker.Models.GeoExcursion;
@@ -17,6 +18,7 @@ public class ExcursionDetailActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         GeoExcursion geoExcursion = (GeoExcursion) intent.getSerializableExtra("geoexcursion");
+
 
         TextView excursionTitleTextView = findViewById(R.id.excursionDetailTitleTextViewId);
         excursionTitleTextView.setText(geoExcursion.getTitle());

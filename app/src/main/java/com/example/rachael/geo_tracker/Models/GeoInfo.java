@@ -3,9 +3,10 @@ package com.example.rachael.geo_tracker.Models;
 import com.example.rachael.geo_tracker.Types.EraType;
 import com.example.rachael.geo_tracker.Types.RockType;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class GeoInfo {
+public class GeoInfo implements Serializable {
 
     private ArrayList<EraType> eraTypes;
     private ArrayList<RockType> rockTypes;
