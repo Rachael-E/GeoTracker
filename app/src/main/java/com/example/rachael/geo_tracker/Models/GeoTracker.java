@@ -51,5 +51,4 @@ public class GeoTracker {
         completedGeoExcursions.remove(geoExcursion);
     }
 
-    // if geoexcursion is added to completed, set the boolean to true.
 }

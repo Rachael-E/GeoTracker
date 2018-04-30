@@ -16,8 +16,8 @@ public class GeoActivitySeedTest {
         geoActivitySeed1 = new GeoActivitySeed();
     }
 
-//    @Test
-//    public void test() {
-//        assertEquals(1, geoActivitySeed1.getList());
-//    }
+    @Test
+    public void Geo() {
+        assertEquals(2, geoActivitySeed1.getList().size());
+    }
 }

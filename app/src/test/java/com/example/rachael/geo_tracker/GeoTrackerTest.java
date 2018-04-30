@@ -17,13 +17,6 @@ import static org.junit.Assert.assertEquals;
 
 public class GeoTrackerTest {
 
-    GeoInfo geoInfo1;
-    ArrayList<GeoInfo> geoInfoList;
-
-    WayPoints waypoint1;
-    WayPoints waypoint2;
-    ArrayList<WayPoints> wayPointList;
-
     GeoExcursion geoExcursion1;
     GeoExcursion geoExcursion2;
     ArrayList<GeoExcursion> geoExcursionList1;
@@ -42,13 +35,13 @@ public class GeoTrackerTest {
         ArrayList<EraType> eraList = new ArrayList<>();
         eraList.add(eraType1);
 
-        geoInfo1 = new GeoInfo(eraList, rockList);
-        geoInfoList = new ArrayList<>();
+        GeoInfo geoInfo1 = new GeoInfo(eraList, rockList);
+        ArrayList<GeoInfo> geoInfoList = new ArrayList<>();
         geoInfoList.add(geoInfo1);
 //---------------------------------------------------------------------------------
-        waypoint1 = new WayPoints("Turn left at the fallen boulder");
-        waypoint2 = new WayPoints("Follow the path to the coastline");
-        wayPointList = new ArrayList<>();
+        WayPoints waypoint1 = new WayPoints("Turn left at the fallen boulder");
+        WayPoints waypoint2 = new WayPoints("Follow the path to the coastline");
+        ArrayList<WayPoints> wayPointList = new ArrayList<>();
         wayPointList.add(waypoint1);
         wayPointList.add(waypoint2);
 

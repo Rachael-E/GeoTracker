@@ -12,7 +12,7 @@ public class GeoExcursion {
     private ActivityType excursionType;
     private boolean isComplete;
 
-    public GeoExcursion (String title, ArrayList<GeoInfo> geologyInfo, ArrayList<WayPoints> wayPoints, ActivityType excursionType, boolean isComplete){
+    public GeoExcursion(String title, ArrayList<GeoInfo> geologyInfo, ArrayList<WayPoints> wayPoints, ActivityType excursionType, boolean isComplete) {
         this.title = title;
         this.geologyInfo = geologyInfo;
 //        this.geologyInfo = new ArrayList<>(geologyInfo);
@@ -47,8 +47,12 @@ public class GeoExcursion {
         return wayPoints;
     }
 
-
     public ActivityType getExcursionType() {
         return excursionType;
     }
+
+    // set waypoints for when newing up a walk
+//    public void setWayPoints(ArrayList<WayPoints> wayPoints) {
+//        this.wayPoints = wayPoints;
+//    }
 }
