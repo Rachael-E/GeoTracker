@@ -1,6 +1,6 @@
 package com.example.rachael.geo_tracker.Models;
 
-import com.example.rachael.geo_tracker.Types.ActivityType;
+import com.example.rachael.geo_tracker.Types.ExcursionType;
 
 import java.util.ArrayList;
 
@@ -9,10 +9,10 @@ public class GeoExcursion {
     private String title;
     private ArrayList<GeoInfo> geologyInfo;
     private ArrayList<WayPoints> wayPoints;
-    private ActivityType excursionType;
+    private ExcursionType excursionType;
     private boolean isComplete;
 
-    public GeoExcursion(String title, ArrayList<GeoInfo> geologyInfo, ArrayList<WayPoints> wayPoints, ActivityType excursionType, boolean isComplete) {
+    public GeoExcursion(String title, ArrayList<GeoInfo> geologyInfo, ArrayList<WayPoints> wayPoints, ExcursionType excursionType, boolean isComplete) {
         this.title = title;
         this.geologyInfo = geologyInfo;
 //        this.geologyInfo = new ArrayList<>(geologyInfo);
@@ -47,7 +47,7 @@ public class GeoExcursion {
         return wayPoints;
     }
 
-    public ActivityType getExcursionType() {
+    public ExcursionType getExcursionType() {
         return excursionType;
     }
 

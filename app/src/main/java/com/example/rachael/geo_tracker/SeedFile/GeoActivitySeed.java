@@ -3,7 +3,7 @@ package com.example.rachael.geo_tracker.SeedFile;
 import com.example.rachael.geo_tracker.Models.GeoExcursion;
 import com.example.rachael.geo_tracker.Models.GeoInfo;
 import com.example.rachael.geo_tracker.Models.GeoTracker;
-import com.example.rachael.geo_tracker.Types.ActivityType;
+import com.example.rachael.geo_tracker.Types.ExcursionType;
 import com.example.rachael.geo_tracker.Models.WayPoints;
 import com.example.rachael.geo_tracker.Types.EraType;
 import com.example.rachael.geo_tracker.Types.RockType;
@@ -34,7 +34,6 @@ public class GeoActivitySeed {
         ArrayList<EraType> eraListFossil = new ArrayList<>();
         ArrayList<EraType> eraListArches = new ArrayList<>();
         eraListFossil.add(eraType1);
-//        eraListArches.add(eraType1, eraType2, eraType3);
         eraListArches.add(eraType1);
         eraListArches.add(eraType2);
         eraListArches.add(eraType3);
@@ -45,7 +44,7 @@ public class GeoActivitySeed {
         ArrayList<GeoInfo> geoInfoListArches = new ArrayList<>();
         geoInfoListFossil.add(geoInfoFossil);
         geoInfoListArches.add(geoInfoArches);
-//---------------------------------------------------------------------------------
+
         WayPoints waypoint1 = new WayPoints("Turn left at the fallen boulder by the Oak Tree");
         WayPoints waypoint2 = new WayPoints("Follow the path to the coastline");
         WayPoints waypoint3 = new WayPoints("Descend the rusty iron ladder to the pebble beach below. Don't worry, it's quite safe!");
@@ -56,12 +55,12 @@ public class GeoActivitySeed {
         wayPointListArches.add(waypoint1);
         wayPointListArches.add(waypoint2);
 
-        ActivityType activityTypeFossil = ActivityType.WALK;
-        ActivityType activityTypeArches = ActivityType.WALK;
+        ExcursionType excursionTypeFossil = ExcursionType.WALK;
+        ExcursionType excursionTypeArches = ExcursionType.WALK;
 
         list = new ArrayList<>();
-        list.add(new GeoExcursion("The Fossil Tree", geoInfoListFossil, wayPointsFossil, activityTypeFossil, false));
-        list.add(new GeoExcursion("The Carsaig Arches", geoInfoListArches, wayPointsArches, activityTypeArches, false));
+        list.add(new GeoExcursion("The Fossil Tree", geoInfoListFossil, wayPointsFossil, excursionTypeFossil, false));
+        list.add(new GeoExcursion("The Carsaig Arches", geoInfoListArches, wayPointsArches, excursionTypeArches, false));
 
     }
 

@@ -4,8 +4,8 @@ import com.example.rachael.geo_tracker.Models.GeoExcursion;
 import com.example.rachael.geo_tracker.Models.GeoInfo;
 import com.example.rachael.geo_tracker.Models.GeoTracker;
 import com.example.rachael.geo_tracker.Models.WayPoints;
-import com.example.rachael.geo_tracker.Types.ActivityType;
 import com.example.rachael.geo_tracker.Types.EraType;
+import com.example.rachael.geo_tracker.Types.ExcursionType;
 import com.example.rachael.geo_tracker.Types.RockType;
 
 import org.junit.Before;
@@ -45,7 +45,7 @@ public class GeoTrackerTest {
         wayPointList.add(waypoint1);
         wayPointList.add(waypoint2);
 
-        ActivityType activityType1 = ActivityType.WALK;
+        ExcursionType activityType1 = ExcursionType.WALK;
 
         geoExcursion1 = new GeoExcursion("The Fossil Tree", geoInfoList, wayPointList, activityType1, false);
         geoExcursion2 = new GeoExcursion("The Carsaig Arches", geoInfoList, wayPointList, activityType1, false);
