@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
-public class GeoExcursionTest {
+public class GeoTrackerTest {
 
     GeoInfo geoInfo1;
     ArrayList<GeoInfo> geoInfoList;
@@ -24,15 +24,6 @@ public class GeoExcursionTest {
     WayPoints waypoint2;
     ArrayList<WayPoints> wayPointList;
 
-//    RockType rocktype1;
-//    RockType rocktype2;
-//    ArrayList<RockType> rockList;
-//
-//    EraType eraType1;
-//    ArrayList<EraType> eraList;
-
-//    ActivityType activityType1;
-
     GeoExcursion geoExcursion1;
     GeoExcursion geoExcursion2;
     ArrayList<GeoExcursion> geoExcursionList1;
@@ -40,7 +31,7 @@ public class GeoExcursionTest {
     GeoTracker geoTracker1;
 
     @Before
-    public void before(){
+    public void before() {
         RockType rocktype1 = RockType.BASALT;
         RockType rocktype2 = RockType.SANDSTONE;
         ArrayList<RockType> rockList = new ArrayList<>();
@@ -48,7 +39,7 @@ public class GeoExcursionTest {
         rockList.add(rocktype2);
 
         EraType eraType1 = EraType.PALAEOGENE;
-        ArrayList<EraType>eraList = new ArrayList<>();
+        ArrayList<EraType> eraList = new ArrayList<>();
         eraList.add(eraType1);
 
         geoInfo1 = new GeoInfo(eraList, rockList);
@@ -73,41 +64,51 @@ public class GeoExcursionTest {
     }
 
     @Test
-    public void geoExcursionHasTitle(){
-        assertEquals("The Fossil Tree", geoExcursion1.getTitle());
+    public void geoTrackerHasCount() {
+        assertEquals(0, geoTracker1.getWalksCompleted());
     }
 
     @Test
-    public void howManyInGeoInfoList(){
-        assertEquals(1, geoInfoList.size());
-        assertEquals("Basalt", geoInfoList.get(0).getRockTypes().get(0).getRockType());
+    public void geoTrackerHasPoints() {
+        assertEquals(0, geoTracker1.getPointsCollected());
     }
 
     @Test
-    public void howManyInWayPointList(){
-        assertEquals(2, wayPointList.size());
+    public void canSetCounter() {
+        geoTracker1.setCounter(50);
+        assertEquals(50, geoTracker1.getWalksCompleted());
     }
 
     @Test
-    public void geoExcursionHasWayPointList(){
-        assertEquals(2, geoExcursion1.getWayPoints().size());
+    public void geoTrackerHasExcursion() {
+        assertEquals(1, geoTracker1.getGeoExcursions().size());
+    }
+
+
+    @Test
+    public void geoTrackerCanAddExcursion() {
+        geoTracker1.addGeoExcursions(geoExcursion2);
+        assertEquals(2, geoTracker1.getGeoExcursions().size());
     }
 
     @Test
-    public void geoExcursionHasActivityType(){
-        assertEquals("Walking activity", geoExcursion1.getExcursionType().getActivityType());
+    public void canAddToCompletedGeoExcursionInGeoTracker() {
+        geoTracker1.addToCompletedGeoExcursions(geoExcursion1);
+        geoTracker1.addToCompletedGeoExcursions(geoExcursion2);
+        assertEquals(2, geoTracker1.getCompletedGeoExcursions().size());
+        assertEquals(2, geoTracker1.getWalksCompleted());
+        assertEquals(100, geoTracker1.getPointsCollected());
+        assertEquals(true, geoTracker1.getCompletedGeoExcursions().get(0).getCompleteStatus());
+
     }
 
     @Test
-    public void canGetCompleteStatus(){
-        assertEquals(false, geoExcursion1.getCompleteStatus());
+    public void canRemoveAnExcursionFromCompletedGeoExcursionsInGeoTracker() {
+        geoTracker1.addToCompletedGeoExcursions(geoExcursion1);
+        geoTracker1.removeCompletedGeoExcursion(geoExcursion1);
+        assertEquals(0, geoTracker1.getCompletedGeoExcursions().size());
     }
 
-    @Test
-    public void canSetCompleteStatusToTrue(){
-        geoExcursion1.setCompleteToTrue();
-        assertEquals(true, geoExcursion1.getCompleteStatus());
-    }
 
 
 

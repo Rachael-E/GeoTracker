@@ -1,4 +1,4 @@
-package com.example.rachael.geo_tracker;
+package com.example.rachael.geo_tracker.Models;
 
 import com.example.rachael.geo_tracker.Types.EraType;
 import com.example.rachael.geo_tracker.Types.RockType;

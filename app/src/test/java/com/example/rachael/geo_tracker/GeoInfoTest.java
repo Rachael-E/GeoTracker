@@ -1,5 +1,7 @@
 package com.example.rachael.geo_tracker;
 
+import com.example.rachael.geo_tracker.Models.GeoInfo;
+import com.example.rachael.geo_tracker.Models.WayPoints;
 import com.example.rachael.geo_tracker.Types.EraType;
 import com.example.rachael.geo_tracker.Types.RockType;
 

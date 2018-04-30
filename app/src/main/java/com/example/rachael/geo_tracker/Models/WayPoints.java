@@ -1,4 +1,4 @@
-package com.example.rachael.geo_tracker;
+package com.example.rachael.geo_tracker.Models;
 
 public class WayPoints {
 

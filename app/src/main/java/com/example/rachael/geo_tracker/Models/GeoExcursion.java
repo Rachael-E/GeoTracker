@@ -1,4 +1,4 @@
-package com.example.rachael.geo_tracker;
+package com.example.rachael.geo_tracker.Models;
 
 import com.example.rachael.geo_tracker.Types.ActivityType;
 
@@ -10,17 +10,33 @@ public class GeoExcursion {
     private ArrayList<GeoInfo> geologyInfo;
     private ArrayList<WayPoints> wayPoints;
     private ActivityType excursionType;
+    private boolean isComplete;
 
-    public GeoExcursion (String title, ArrayList<GeoInfo> geologyInfo, ArrayList<WayPoints> wayPoints, ActivityType excursionType){
+    public GeoExcursion (String title, ArrayList<GeoInfo> geologyInfo, ArrayList<WayPoints> wayPoints, ActivityType excursionType, boolean isComplete){
         this.title = title;
-        this.geologyInfo = new ArrayList<>(geologyInfo);
-        this.wayPoints = new ArrayList<>(wayPoints);
+        this.geologyInfo = geologyInfo;
+//        this.geologyInfo = new ArrayList<>(geologyInfo);
+        this.wayPoints = wayPoints;
         this.excursionType = excursionType;
+        this.isComplete = isComplete;
 
     }
 
     public String getTitle() {
         return title;
+    }
+
+    public boolean getCompleteStatus() {
+        return isComplete;
+    }
+
+    public void setCompleteToFalse() {
+        isComplete = false;
+    }
+
+
+    public void setCompleteToTrue() {
+        isComplete = true;
     }
 
     public ArrayList<GeoInfo> getGeologyInfo() {

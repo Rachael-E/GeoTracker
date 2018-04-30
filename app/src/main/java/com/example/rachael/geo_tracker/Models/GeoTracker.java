@@ -1,4 +1,4 @@
-package com.example.rachael.geo_tracker;
+package com.example.rachael.geo_tracker.Models;
 
 import java.util.ArrayList;
 
@@ -44,9 +44,12 @@ public class GeoTracker {
         completedGeoExcursions.add(geoExcursion);
         walksCompleted += 1;
         pointsCollected += geoExcursion.getExcursionType().getActivityPoints();
+        geoExcursion.setCompleteToTrue();
     }
 
     public void removeCompletedGeoExcursion(GeoExcursion geoExcursion){
         completedGeoExcursions.remove(geoExcursion);
     }
+
+    // if geoexcursion is added to completed, set the boolean to true.
 }
