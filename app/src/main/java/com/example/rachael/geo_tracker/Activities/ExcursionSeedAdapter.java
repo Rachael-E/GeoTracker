@@ -31,7 +31,9 @@ public class ExcursionSeedAdapter extends ArrayAdapter<GeoExcursion> {
         excursionTitle.setText(currentExcursion.getTitle());
 
         TextView excursionType = listItemView.findViewById(R.id.excursionTypeViewId);
-        excursionType.setText(currentExcursion.getExcursionType().getActivityType());
+        String activityType = currentExcursion.getExcursionType().getActivityType();
+        String activityToDisplay = "Excursion Type: " + activityType;
+        excursionType.setText(activityToDisplay);
 
         listItemView.setTag(currentExcursion);
 

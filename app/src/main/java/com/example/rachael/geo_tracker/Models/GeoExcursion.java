@@ -2,9 +2,10 @@ package com.example.rachael.geo_tracker.Models;
 
 import com.example.rachael.geo_tracker.Types.ExcursionType;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class GeoExcursion {
+public class GeoExcursion implements Serializable {
 
     private String title;
     private ArrayList<GeoInfo> geologyInfo;

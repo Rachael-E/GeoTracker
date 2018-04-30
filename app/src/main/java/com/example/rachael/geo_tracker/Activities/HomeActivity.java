@@ -26,7 +26,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
 
-    public void onMakeChoiceButtonClicked(View button){
+    public void onFindExcursionButtonClicked(View button){
         Log.d(getClass().toString(), "onFindWalkButton was called");
 
         Intent intent = new Intent( this, FindWalkActivity.class);

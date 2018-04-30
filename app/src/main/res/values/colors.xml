@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#ff4081</color>
     <color name="background_color">#96c473</color>
+    <color name="background_excursionTitle_list_color">#e2b9d5</color>
+    <color name="background_excursionType_list_color">#e0f2b7</color>
 </resources>

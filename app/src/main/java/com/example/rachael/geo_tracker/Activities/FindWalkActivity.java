@@ -1,5 +1,6 @@
 package com.example.rachael.geo_tracker.Activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,5 +30,9 @@ public class FindWalkActivity extends AppCompatActivity {
 
     public void onListItemClick(View listItem){
         GeoExcursion geoExcursion = (GeoExcursion) listItem.getTag();
+
+        Intent intent = new Intent(this, ExcursionDetailActivity.class);
+        intent.putExtra("geoexcursion", geoExcursion);
+        startActivity(intent);
     }
 }
