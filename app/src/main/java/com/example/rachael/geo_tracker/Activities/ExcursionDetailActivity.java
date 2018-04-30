@@ -25,10 +25,15 @@ public class ExcursionDetailActivity extends AppCompatActivity {
 
         // tidy this up to make a method in geology info which returns all era types with name and period age
         TextView excursionEraTextView = findViewById(R.id.eraTypeTextViewId);
-        excursionEraTextView.setText(geoExcursion.getGeologyInfo().get(0).getEraTypes().get(0).getGeologyPeriod());
+        String returnGeologyPeriod = geoExcursion.getGeologyInfo().get(0).getEraTypes().get(0).getGeologyPeriod();
+        excursionEraTextView.setText(returnGeologyPeriod);
 
+    // Set up for loop to get the appropriate components
         TextView excursionRockTextView = findViewById(R.id.rockTypeTextViewId);
-        excursionRockTextView.setText(geoExcursion.getGeologyInfo().get(0).getRockTypes().get(0).getRockType());
+        String getFirstRockType = geoExcursion.getGeologyInfo().get(0).getRockTypes().get(0).getRockType();
+        //String getSecondRockType = geoExcursion.getGeologyInfo().get(0).getRockTypes().get(1).getRockType();
+        //String rockTypes = getFirstRockType + ", " + getSecondRockType;
+        excursionRockTextView.setText(getFirstRockType);
 
         TextView excursionType = findViewById(R.id.excursionDetailTypeTextViewId);
         excursionType.setText(geoExcursion.getExcursionType().getActivityType());
