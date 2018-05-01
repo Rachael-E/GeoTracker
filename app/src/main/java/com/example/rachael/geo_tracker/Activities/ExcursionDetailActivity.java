@@ -5,8 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.rachael.geo_tracker.Adapters.WayPointAdapter;
 import com.example.rachael.geo_tracker.Models.GeoExcursion;
 import com.example.rachael.geo_tracker.Models.GeoTracker;
 import com.example.rachael.geo_tracker.R;
@@ -43,7 +45,17 @@ public class ExcursionDetailActivity extends AppCompatActivity {
 
         TextView excursionType = findViewById(R.id.excursionDetailTypeTextViewId);
         excursionType.setText(geoExcursion.getExcursionType().getActivityType());
+
+        WayPointAdapter wayPointAdapter = new WayPointAdapter(this, geoExcursion.getWayPoints());
+
+        ListView listView = findViewById(R.id.wayPointListViewId);
+        listView.setAdapter(wayPointAdapter);
+
+
     }
+
+
+
 
     public void onCompletedButtonClick(View button){
 

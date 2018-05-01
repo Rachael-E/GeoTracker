@@ -43,6 +43,13 @@ public class HomeActivity extends AppCompatActivity {
 
         startActivity(intent);
     }
+
+    public void onNewExcursionButtonClicked(View button){
+
+        Intent intent = new Intent(this, NewExcursionActivity.class);
+
+        startActivity(intent);
+    }
 }
 
 

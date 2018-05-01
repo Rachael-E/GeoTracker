@@ -34,6 +34,9 @@
     <string name="complete">Complete</string>
     <string name="not_complete">Not Complete</string>
 
+    <string name="add_waypoint">Add a Waypoint</string>
+    <string name="waypoint_title">Waypoints</string>
+
 
 
 
