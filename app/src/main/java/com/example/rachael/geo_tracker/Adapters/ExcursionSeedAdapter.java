@@ -1,4 +1,4 @@
-package com.example.rachael.geo_tracker.Activities;
+package com.example.rachael.geo_tracker.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;

@@ -4,7 +4,8 @@
     <string name="view_walk_button">Find an Excursion</string>
     <string name="view_completed_walks_button">View Completed Excursions</string>
     <string name="new_walk_button">Add Your Own Excursion!</string>
-    <string name="completed_button">Add walk to completed list</string>
+    <string name="completed_button">Add excursion to completed list</string>
     <string name="preference_file_key">COMPLETED</string>
-    <string name="completed_page_title">Completed Walks</string>
+    <string name="completed_page_title">Completed Excursion</string>
+    <string name="excursion_page_title">Choose an Excursion!</string>
 </resources>

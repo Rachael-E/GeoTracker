@@ -6,13 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
+import com.example.rachael.geo_tracker.Adapters.ExcursionSeedAdapter;
 import com.example.rachael.geo_tracker.Models.GeoExcursion;
 import com.example.rachael.geo_tracker.Models.GeoTracker;
 import com.example.rachael.geo_tracker.R;
 import com.example.rachael.geo_tracker.SeedFile.GeoActivitySeed;
 import com.example.rachael.geo_tracker.SharedPreferences.SharedPreferencesHelper;
-
-import java.util.ArrayList;
 
 public class FindWalkActivity extends AppCompatActivity {
 
