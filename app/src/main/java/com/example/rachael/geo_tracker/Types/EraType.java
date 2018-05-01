@@ -2,18 +2,18 @@ package com.example.rachael.geo_tracker.Types;
 
 public enum EraType {
 
-    QUATERNARY("Quaternary", 2),
-    PALAEOGENE("Palaeogene", 66),
-    CRETACEOUS("Cretaceous", 145),
-    JURASSIC("Jurassic", 201),
-    TRIASSIC("Triassic", 252),
-    PERMIAN("Permian", 299),
-    CARBONIFEROUS("Carboniferous", 359),;
+    QUATERNARY("Quaternary", "Max. age 2.8MYa"),
+    PALAEOGENE("Palaeogene", "Max. age 66MYa"),
+    CRETACEOUS("Cretaceous", "Max. age 145MYa"),
+    JURASSIC("Jurassic", "Max. age 201MYa"),
+    TRIASSIC("Triassic", "Max. age 252MYa"),
+    PERMIAN("Permian", "Max. age 299MYa"),
+    CARBONIFEROUS("Carboniferous", "Max. age 359MYa"),;
 
     private String geologyPeriod;
-    private int periodStartMYa;
+    private String periodStartMYa;
 
-    private EraType(String geologyPeriod, int periodStartMYa){
+    private EraType(String geologyPeriod, String periodStartMYa){
         this.geologyPeriod = geologyPeriod;
         this.periodStartMYa = periodStartMYa;
     }
@@ -22,7 +22,7 @@ public enum EraType {
         return geologyPeriod;
     }
 
-    public int getPeriodStartMYa() {
+    public String getPeriodStartMYa() {
         return periodStartMYa;
     }
 }

@@ -7,7 +7,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.rachael.geo_tracker.Models.GeoTracker;
 import com.example.rachael.geo_tracker.R;
+import com.example.rachael.geo_tracker.SharedPreferences.SharedPreferencesHelper;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -32,6 +34,13 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent( this, FindWalkActivity.class);
 
 //        intent.putExtra("excursions", excursions);
+        startActivity(intent);
+    }
+
+    public void onCompletedButtonClicked(View button){
+
+        Intent intent = new Intent(this, CompletedExcursionActivity.class);
+
         startActivity(intent);
     }
 }

@@ -8,13 +8,15 @@ import java.util.ArrayList;
 public class GeoExcursion implements Serializable {
 
     private String title;
+    private String summary;
     private ArrayList<GeoInfo> geologyInfo;
     private ArrayList<WayPoints> wayPoints;
     private ExcursionType excursionType;
     private boolean isComplete;
 
-    public GeoExcursion(String title, ArrayList<GeoInfo> geologyInfo, ArrayList<WayPoints> wayPoints, ExcursionType excursionType, boolean isComplete) {
+    public GeoExcursion(String title, String summary, ArrayList<GeoInfo> geologyInfo, ArrayList<WayPoints> wayPoints, ExcursionType excursionType, boolean isComplete) {
         this.title = title;
+        this.summary = summary;
         this.geologyInfo = geologyInfo;
 //        this.geologyInfo = new ArrayList<>(geologyInfo);
         this.wayPoints = wayPoints;
@@ -25,6 +27,10 @@ public class GeoExcursion implements Serializable {
 
     public String getTitle() {
         return title;
+    }
+
+    public String getSummary() {
+        return summary;
     }
 
     public boolean getCompleteStatus() {

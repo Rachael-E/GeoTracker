@@ -31,7 +31,7 @@ public class CompletedExcursionAdaptor extends ArrayAdapter<GeoExcursion> {
 
         TextView excursionTitle = listItemView.findViewById(R.id.excursionNameCompletedTextViewId);
         excursionTitle.setText(completedGeoExcursion.getTitle());
-        
+
         listItemView.setTag(completedGeoExcursion);
 
         return listItemView;

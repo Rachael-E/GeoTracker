@@ -3,6 +3,7 @@ package com.example.rachael.geo_tracker.Activities;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 
 import com.example.rachael.geo_tracker.Adapters.CompletedExcursionAdaptor;
@@ -25,6 +26,7 @@ public class CompletedExcursionActivity extends AppCompatActivity {
         completedGeoExcursionToAddToCompletedList = (GeoExcursion) intent.getSerializableExtra("completedGeoexcursion");
 
         GeoTracker geoTracker = SharedPreferencesHelper.loadApplicationState(this);
+        SharedPreferencesHelper.saveApplicationState(this, geoTracker);
 
         // make new adaptor here
         CompletedExcursionAdaptor excursionNamesArrayAdapter = new CompletedExcursionAdaptor(this, geoTracker.getCompletedGeoExcursions());
@@ -33,5 +35,11 @@ public class CompletedExcursionActivity extends AppCompatActivity {
         excursionNamesListView.setAdapter(excursionNamesArrayAdapter);
 
 
+    }
+
+    public void onHomeButtonClicked(View button){
+        Intent intent = new Intent(this, HomeActivity.class);
+
+        startActivity(intent);
     }
 }

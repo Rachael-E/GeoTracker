@@ -8,4 +8,5 @@
     <string name="preference_file_key">COMPLETED</string>
     <string name="completed_page_title">Completed Excursion</string>
     <string name="excursion_page_title">Choose an Excursion!</string>
+    <string name="home_button">Return to GeoTrax Homepage</string>
 </resources>

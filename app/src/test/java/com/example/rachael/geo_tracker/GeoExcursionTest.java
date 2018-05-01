@@ -63,8 +63,8 @@ public class GeoExcursionTest {
 
         ExcursionType activityType1 = ExcursionType.WALK;
 
-        geoExcursion1 = new GeoExcursion("The Fossil Tree", geoInfoList, wayPointList, activityType1, false);
-        geoExcursion2 = new GeoExcursion("The Carsaig Arches", geoInfoList, wayPointList, activityType1, false);
+        geoExcursion1 = new GeoExcursion("The Fossil Tree", "bla", geoInfoList, wayPointList, activityType1, false);
+        geoExcursion2 = new GeoExcursion("The Carsaig Arches", "bla", geoInfoList, wayPointList, activityType1, false);
         geoExcursionList1 = new ArrayList<>();
         geoExcursionList1.add(geoExcursion1);
 

@@ -61,10 +61,10 @@ public class GeoActivitySeed {
 
         // creating an empty list to add Geoexcursions to. Naming based on which walk they will belong to (Fossil = "The Fossil Tree", Arches = "Carsaig Arches").
         list = new ArrayList<>();
-        list.add(new GeoExcursion("The Fossil Tree", geoInfoListFossil, wayPointListFossil, excursionTypeFossil, false));
-        list.add(new GeoExcursion("The Carsaig Arches", geoInfoListArches, wayPointListArches, excursionTypeArches, false));
-        list.add(new GeoExcursion("The Wilderness", geoInfoListArches, wayPointListArches, excursionTypeArches, false));
-        list.add(new GeoExcursion("Ben More", geoInfoListArches, wayPointListArches, excursionTypeArches, false));
+        list.add(new GeoExcursion("The Fossil Tree", "This 15 mile there and back again walk will take you to the infamous Fossil Tree on The Burgh in Mull.", geoInfoListFossil, wayPointListFossil, excursionTypeFossil, false));
+        list.add(new GeoExcursion("The Carsaig Arches", "The Carsaig Arches, sea stacks made of basalt, await you at the turning point of a full day there and back again walk.", geoInfoListArches, wayPointListArches, excursionTypeArches, false));
+        list.add(new GeoExcursion("The Wilderness", "A shorter version of The Fossil Tree walk, explore raised beaches and a volcanic vent.", geoInfoListArches, wayPointListArches, excursionTypeArches, false));
+        list.add(new GeoExcursion("Ben More", "Mull's only Munro, a full day strenuous hike over rough terrain with reward views", geoInfoListArches, wayPointListArches, excursionTypeArches, false));
 
         return list;
     }

@@ -25,6 +25,8 @@ public class FindWalkActivity extends AppCompatActivity {
         //if geo tracker is completely new
         GeoTracker geoTracker = new GeoTracker( GeoActivitySeed.seedEverything() , 0,0);
 
+        SharedPreferencesHelper.loadApplicationState(this);
+
         SharedPreferencesHelper.saveApplicationState(this, geoTracker);
 
         ExcursionSeedAdapter excursionAdapter = new ExcursionSeedAdapter(this, geoTracker.getGeoExcursions());
