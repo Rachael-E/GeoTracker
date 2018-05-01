@@ -30,6 +30,11 @@
     <string name="Walk">Walk</string>
     <string name="drive_by">Drive By</string>
 
+    <string name="choose_if_walk_complete">Has this excursion been completed?</string>
+    <string name="complete">Complete</string>
+    <string name="not_complete">Not Complete</string>
+
+
 
 
 
