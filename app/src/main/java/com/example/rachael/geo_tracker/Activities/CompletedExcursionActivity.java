@@ -42,4 +42,5 @@ public class CompletedExcursionActivity extends AppCompatActivity {
 
         startActivity(intent);
     }
+
 }
