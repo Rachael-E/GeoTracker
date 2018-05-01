@@ -1,8 +1,9 @@
 package com.example.rachael.geo_tracker.Models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class GeoTracker {
+public class GeoTracker implements Serializable {
 
     private ArrayList<GeoExcursion> geoExcursions;
     private ArrayList<GeoExcursion> completedGeoExcursions;

@@ -7,23 +7,28 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.rachael.geo_tracker.Models.GeoExcursion;
+import com.example.rachael.geo_tracker.Models.GeoTracker;
 import com.example.rachael.geo_tracker.R;
+import com.example.rachael.geo_tracker.SharedPreferences.SharedPreferencesHelper;
 
 public class ExcursionDetailActivity extends AppCompatActivity {
+
+    GeoExcursion geoExcursion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_excursion_detail);
 
+
         Intent intent = getIntent();
-        GeoExcursion geoExcursion = (GeoExcursion) intent.getSerializableExtra("geoexcursion");
+        geoExcursion = (GeoExcursion) intent.getSerializableExtra("geoexcursion");
 
 
         TextView excursionTitleTextView = findViewById(R.id.excursionDetailTitleTextViewId);
         excursionTitleTextView.setText(geoExcursion.getTitle());
 
-        // tidy this up to make a method in geology info which returns all era types with name and period age
+        //TODO: tidy this up to make a method in geology info which returns all era types with name and period age
         TextView excursionEraTextView = findViewById(R.id.eraTypeTextViewId);
         String returnGeologyPeriod = geoExcursion.getGeologyInfo().get(0).getEraTypes().get(0).getGeologyPeriod();
         excursionEraTextView.setText(returnGeologyPeriod);
@@ -39,11 +44,15 @@ public class ExcursionDetailActivity extends AppCompatActivity {
         excursionType.setText(geoExcursion.getExcursionType().getActivityType());
     }
 
-    public void onCompletedButtonClick(View listItem){
-        GeoExcursion completedGeoexcursion = (GeoExcursion) listItem.getTag();
+    public void onCompletedButtonClick(View button){
+
+        GeoTracker geoTracker = SharedPreferencesHelper.loadApplicationState(this);
+        geoTracker.addToCompletedGeoExcursions(geoExcursion);
+        SharedPreferencesHelper.saveApplicationState(this, geoTracker);
+
 
         Intent intent = new Intent(this, CompletedExcursionActivity.class);
-        intent.putExtra("completedGeoexcursion", completedGeoexcursion);
+        intent.putExtra("completedGeoexcursion", this.geoExcursion);
 
         startActivity(intent);
     }

@@ -25,18 +25,9 @@ public class CompletedExcursionActivity extends AppCompatActivity {
         Intent intent = getIntent();
         GeoExcursion completedGeoExcursionToAddToCompletedList = (GeoExcursion) intent.getSerializableExtra("completedGeoexcursion");
 
-        GeoTracker applicationState = SharedPreferencesHelper.loadApplicationState(this);
-        applicationState.getCompletedGeoExcursions().add(completedGeoExcursionToAddToCompletedList);
-        SharedPreferencesHelper.saveApplicationState(this, applicationState);
+        GeoTracker geoTracker = SharedPreferencesHelper.loadApplicationState(this);
 
-        ArrayList<String> geoExcursionName = new ArrayList<>();
-
-        for (GeoExcursion geoExcursion : applicationState.getCompletedGeoExcursions()){
-            String title = geoExcursion.getTitle();
-            geoExcursionName.add(title);
-        }
-
-        ArrayAdapter<String> excursionNamesArrayAdapter = new ArrayAdapter<>(this, R.layout.excursion_name_text_view, geoExcursionName);
+        ExcursionSeedAdapter excursionNamesArrayAdapter = new ExcursionSeedAdapter(this, geoTracker.getCompletedGeoExcursions());
 
         ListView excursionNamesListView = findViewById(R.id.completedListViewId);
         excursionNamesListView.setAdapter(excursionNamesArrayAdapter);

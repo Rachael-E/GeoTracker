@@ -12,13 +12,9 @@ import java.util.ArrayList;
 
 public class GeoActivitySeed {
 
+    public static ArrayList<GeoExcursion> seedEverything(){
 
-    private ArrayList<GeoInfo> geoInfoFossil, geoInfoArches;
-    private ArrayList<WayPoints> wayPointsFossil, wayPointsArches;
-    private ArrayList<GeoExcursion> list;
-
-
-    public GeoActivitySeed() {
+        ArrayList<GeoExcursion> list;
 
         // adding rock types to the rockList array list for feeding into GeoInfo. Naming based on which walk they will belong to (Fossil = "The Fossil Tree", Arches = "Carsaig Arches").
         RockType rocktype1 = RockType.BASALT;
@@ -65,15 +61,15 @@ public class GeoActivitySeed {
 
         // creating an empty list to add Geoexcursions to. Naming based on which walk they will belong to (Fossil = "The Fossil Tree", Arches = "Carsaig Arches").
         list = new ArrayList<>();
-        list.add(new GeoExcursion("The Fossil Tree", geoInfoListFossil, wayPointsFossil, excursionTypeFossil, false));
-        list.add(new GeoExcursion("The Carsaig Arches", geoInfoListArches, wayPointsArches, excursionTypeArches, false));
+        list.add(new GeoExcursion("The Fossil Tree", geoInfoListFossil, wayPointListFossil, excursionTypeFossil, false));
+        list.add(new GeoExcursion("The Carsaig Arches", geoInfoListArches, wayPointListArches, excursionTypeArches, false));
+        list.add(new GeoExcursion("The Wilderness", geoInfoListArches, wayPointListArches, excursionTypeArches, false));
+        list.add(new GeoExcursion("Ben More", geoInfoListArches, wayPointListArches, excursionTypeArches, false));
 
+        return list;
     }
 
-    // method to return the list of all geoExcursions
-    public ArrayList<GeoExcursion> getList() {
-        return new ArrayList<>(list);
-    }
+
 
 
 }
