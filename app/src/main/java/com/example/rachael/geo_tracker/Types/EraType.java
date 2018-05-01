@@ -25,4 +25,12 @@ public enum EraType {
     public String getPeriodStartMYa() {
         return periodStartMYa;
     }
+
+    public void setGeologyPeriod(String geologyPeriod) {
+        this.geologyPeriod = geologyPeriod;
+    }
+
+    public void setPeriodStartMYa(String periodStartMYa) {
+        this.periodStartMYa = periodStartMYa;
+    }
 }

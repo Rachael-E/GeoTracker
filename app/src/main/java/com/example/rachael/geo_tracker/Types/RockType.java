@@ -21,4 +21,12 @@ public enum RockType {
     public String getRockTypeSummary() {
         return rockTypeSummary;
     }
+
+    public void setRockType(String rockType) {
+        this.rockType = rockType;
+    }
+
+    public void setRockTypeSummary(String rockTypeSummary) {
+        this.rockTypeSummary = rockTypeSummary;
+    }
 }

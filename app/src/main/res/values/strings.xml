@@ -9,4 +9,31 @@
     <string name="completed_page_title">Completed Excursion List</string>
     <string name="excursion_page_title">Choose an Excursion!</string>
     <string name="home_button">Return to GeoTrax Homepage</string>
+    <string name="save_new_excursion">Save Your Excursion</string>
+
+
+    <string name="enter_excursion_title">Your excursion title is entered here</string>
+    <string name="enter_excursion_summary">Your excursion summary is entered here</string>
+
+    <string name="select_era_info">Choose below for what geological periods are in your excursion</string>
+    <string name="Jurassic">Jurassic</string>
+    <string name="Palaeogene">Palaeogene</string>
+    <string name="Triassic">Triassic</string>
+    <string name="Quaternary">Quaternary</string>
+
+    <string name="select_rock_info">Choose below for what rock types are in your excursion</string>
+    <string name="Basalt">Basalt</string>
+    <string name="Sandstone">Sandstone</string>
+    <string name="Mudstone">Mudstone</string>
+
+    <string name="choose_excursion_type">Choose Excursion Type</string>
+    <string name="Walk">Walk</string>
+    <string name="drive_by">Drive By</string>
+
+
+
+
+
+
+
 </resources>

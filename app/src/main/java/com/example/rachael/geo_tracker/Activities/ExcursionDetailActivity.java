@@ -58,7 +58,5 @@ public class ExcursionDetailActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-//    public boolean onCompletedButtonClicked(View button){
-//        if(button.get)
-//    }
+
 }

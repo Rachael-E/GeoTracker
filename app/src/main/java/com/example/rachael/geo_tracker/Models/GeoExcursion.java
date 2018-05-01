@@ -41,7 +41,6 @@ public class GeoExcursion implements Serializable {
         isComplete = false;
     }
 
-
     public void setCompleteToTrue() {
         isComplete = true;
     }
@@ -58,8 +57,27 @@ public class GeoExcursion implements Serializable {
         return excursionType;
     }
 
-    // set waypoints for when newing up a walk
-//    public void setWayPoints(ArrayList<WayPoints> wayPoints) {
-//        this.wayPoints = wayPoints;
-//    }
+    public void setWayPoints(ArrayList<WayPoints> wayPoints) {
+        this.wayPoints = wayPoints;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
+    }
+
+    public void setGeologyInfo(ArrayList<GeoInfo> geologyInfo) {
+        this.geologyInfo = geologyInfo;
+    }
+
+    public void setExcursionType(ExcursionType excursionType) {
+        this.excursionType = excursionType;
+    }
+
+    public void setComplete(boolean complete) {
+        isComplete = complete;
+    }
 }

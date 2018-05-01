@@ -23,4 +23,12 @@ public class GeoInfo implements Serializable {
     public ArrayList<RockType> getRockTypes() {
         return rockTypes;
     }
+
+    public void setEraTypes(ArrayList<EraType> eraTypes) {
+        this.eraTypes = eraTypes;
+    }
+
+    public void setRockTypes(ArrayList<RockType> rockTypes) {
+        this.rockTypes = rockTypes;
+    }
 }

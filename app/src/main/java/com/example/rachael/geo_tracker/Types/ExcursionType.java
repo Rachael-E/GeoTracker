@@ -20,4 +20,12 @@ public enum ExcursionType {
     public int getActivityPoints() {
         return excursionPoints;
     }
+
+    public void setExcursionType(String excursionType) {
+        this.excursionType = excursionType;
+    }
+
+    public void setExcursionPoints(int excursionPoints) {
+        this.excursionPoints = excursionPoints;
+    }
 }
