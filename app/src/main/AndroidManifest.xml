@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.FindWalkActivity" />
-        <activity android:name=".Activities.ExcursionDetailActivity"></activity>
+        <activity android:name=".Activities.ExcursionDetailActivity" />
+        <activity android:name=".Activities.CompletedExcursionActivity"></activity>
     </application>
 
 </manifest>

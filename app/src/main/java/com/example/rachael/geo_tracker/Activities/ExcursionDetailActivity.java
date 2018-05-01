@@ -3,7 +3,7 @@ package com.example.rachael.geo_tracker.Activities;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.rachael.geo_tracker.Models.GeoExcursion;
@@ -37,5 +37,14 @@ public class ExcursionDetailActivity extends AppCompatActivity {
 
         TextView excursionType = findViewById(R.id.excursionDetailTypeTextViewId);
         excursionType.setText(geoExcursion.getExcursionType().getActivityType());
+    }
+
+    public void onCompletedButtonClick(View listItem){
+        GeoExcursion completedGeoexcursion = (GeoExcursion) listItem.getTag();
+
+        Intent intent = new Intent(this, CompletedExcursionActivity.class);
+        intent.putExtra("completedGeoexcursion", completedGeoexcursion);
+
+        startActivity(intent);
     }
 }
