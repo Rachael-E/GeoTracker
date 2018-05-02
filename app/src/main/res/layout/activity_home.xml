@@ -7,51 +7,64 @@
     android:background="@color/background_color"
     tools:context=".Activities.HomeActivity">
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="575dp"
+        android:layout_height="307dp"
+        android:layout_marginTop="228dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/storr_colour" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:fontFamily="casual"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/amethysta"
         android:gravity="center_horizontal"
         android:text="@string/welcome_text"
+        android:textAllCaps="false"
         android:textColor="@android:color/background_light"
         android:textColorHint="@color/colorAccent"
         android:textSize="18sp"
-        android:textStyle="bold"
         android:typeface="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.165" />
+        app:layout_constraintVertical_bias="0.189" />
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="189dp"
-        android:layout_marginBottom="95dp"
         android:layout_marginEnd="18dp"
         android:layout_marginLeft="19dp"
         android:layout_marginRight="18dp"
         android:layout_marginStart="19dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="268dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/findAWalkButtonId"
             android:layout_width="match_parent"
             android:layout_height="63dp"
+            android:fontFamily="@font/amethysta"
             android:onClick="onFindExcursionButtonClicked"
             android:shadowColor="@android:color/black"
             android:text="@string/view_walk_button"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/viewCompletedWalksButtonId"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -61,9 +74,12 @@
             android:id="@+id/viewCompletedWalksButtonId"
             android:layout_width="match_parent"
             android:layout_height="70dp"
+            android:fontFamily="@font/amethysta"
             android:onClick="onCompletedButtonClicked"
             android:paddingBottom="0dp"
             android:text="@string/view_completed_walks_button"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/createNewWalkButtonId"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/createNewWalkButtonId" />
@@ -72,12 +88,37 @@
             android:id="@+id/createNewWalkButtonId"
             android:layout_width="match_parent"
             android:layout_height="63dp"
+            android:fontFamily="@font/amethysta"
             android:onClick="onNewExcursionButtonClicked"
             android:text="@string/new_walk_button"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/viewCompletedWalksButtonId" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="379dp"
+        android:layout_height="59dp"
+        android:layout_marginBottom="456dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/GeoTrax"
+        android:fontFamily="@font/amethysta"
+        android:gravity="center"
+        android:text="@string/GeoTrax"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

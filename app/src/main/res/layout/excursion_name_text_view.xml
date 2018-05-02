@@ -11,7 +11,7 @@
         android:layout_width="343dp"
         android:layout_height="45dp"
         android:background="@color/background_excursionTitle_list_color"
-        android:fontFamily="casual"
+        android:fontFamily="@font/amethysta"
         android:gravity="center"
         android:text="TextView"
         android:textColor="@android:color/black"

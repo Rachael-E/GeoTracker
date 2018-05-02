@@ -15,7 +15,7 @@
         android:layout_marginRight="40dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
-        android:fontFamily="casual"
+        android:fontFamily="@font/amethysta"
         android:text="TextView"
         android:textColor="@android:color/black"
         android:textSize="16sp"
@@ -23,4 +23,5 @@
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </android.support.constraint.ConstraintLayout>

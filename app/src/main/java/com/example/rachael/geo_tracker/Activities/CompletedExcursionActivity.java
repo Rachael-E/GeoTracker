@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.rachael.geo_tracker.Adapters.CompletedExcursionAdaptor;
 import com.example.rachael.geo_tracker.Adapters.ExcursionSeedAdapter;
@@ -33,6 +34,16 @@ public class CompletedExcursionActivity extends AppCompatActivity {
 
         ListView excursionNamesListView = findViewById(R.id.completedListViewId);
         excursionNamesListView.setAdapter(excursionNamesArrayAdapter);
+
+        TextView excursionsCompleted = findViewById(R.id.excursionCountertextViewId);
+        String walksCompletedToString = "" + geoTracker.getWalksCompleted();
+        String walksCompletedWithTitle = "Excursions Completed: " + walksCompletedToString;
+        excursionsCompleted.setText(walksCompletedWithTitle);
+
+        TextView excursionPointsCollected = findViewById(R.id.pointsCounterId);
+        String pointsCollectedToString = ""+ geoTracker.getPointsCollected();
+        String pointsCollectedWithTitle = "GeoTrax Points collected: "+ pointsCollectedToString;
+        excursionPointsCollected.setText(pointsCollectedWithTitle);
 
 
     }
