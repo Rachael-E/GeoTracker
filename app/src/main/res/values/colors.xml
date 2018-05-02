@@ -7,7 +7,9 @@
 
     <color name="background_excursionTitle_list_color">#e9d5a2</color>
 
-    <color name="GeoTrax">#cea659</color>
+    <color name="GeoTrax">#CCa9a18a</color>
+
+    <color name="GeoTraxInfo">#80a9a18a</color>
 
     <color name="background_excursionType_list_color">#eaf5d3</color>
 </resources>
