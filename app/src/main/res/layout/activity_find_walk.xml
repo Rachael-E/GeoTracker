@@ -10,7 +10,7 @@
         android:id="@+id/excursionTitleForListId"
         android:layout_width="366dp"
         android:layout_height="87dp"
-        android:background="@color/background_color"
+        android:background="@color/GeoTrax"
         android:fontFamily="@font/amethysta"
         android:gravity="center"
         android:text="@string/excursion_page_title"
