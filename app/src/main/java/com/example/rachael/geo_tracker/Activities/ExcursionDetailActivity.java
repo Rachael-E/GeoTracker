@@ -35,7 +35,7 @@ public class ExcursionDetailActivity extends AppCompatActivity {
         TextView excursionEraTextView = findViewById(R.id.eraTypeTextViewId);
         String returnGeologyPeriod = geoExcursion.getGeologyInfo().get(0).getEraTypes().get(0).getGeologyPeriod();
         excursionEraTextView.setText(returnGeologyPeriod);
-
+//TODO: Add a new string to explain what this textview is (rocktype)
     // Set up for loop to get the appropriate components
         TextView excursionRockTextView = findViewById(R.id.rockTypeTextViewId);
         String getFirstRockType = geoExcursion.getGeologyInfo().get(0).getRockTypes().get(0).getRockType();
