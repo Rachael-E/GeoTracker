@@ -23,24 +23,7 @@ public class HomeActivity extends AppCompatActivity {
     //GeoTracker geoTracker;
 
 //
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//
-//
-//        MenuInflater menuInflater = getMenuInflater();
-//        menuInflater.inflate(R.menu.PLACEHOLDER, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()) {
-//            case R.id.menuHome:
-//                startActivity(new Intent(this, HomeActivity.class));
-//                return true;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +45,25 @@ public class HomeActivity extends AppCompatActivity {
             SharedPreferencesHelper.saveApplicationState(this, geoTracker);
         }
 
+    }
+
+        @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.activity_menu_home, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menuHome:
+                startActivity(new Intent(this, HomeActivity.class));
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 
