@@ -16,13 +16,13 @@
     <string name="enter_excursion_title">Your excursion title is entered here</string>
     <string name="enter_excursion_summary">Your excursion summary is entered here</string>
 
-    <string name="select_era_info">Choose below for what geological periods are in your excursion</string>
+    <string name="select_era_info">Choose below which geological periods are in your excursion</string>
     <string name="Jurassic">Jurassic</string>
     <string name="Palaeogene">Palaeogene</string>
     <string name="Triassic">Triassic</string>
     <string name="Quaternary">Quaternary</string>
 
-    <string name="select_rock_info">Choose below for what rock types are in your excursion</string>
+    <string name="select_rock_info">Choose below which rock types are in your excursion</string>
     <string name="Basalt">Basalt</string>
     <string name="Sandstone">Sandstone</string>
     <string name="Mudstone">Mudstone</string>
@@ -33,7 +33,7 @@
 
     <string name="choose_if_walk_complete">Has this excursion been completed?</string>
     <string name="complete">Complete</string>
-    <string name="not_complete">Not Complete</string>
+    <string name="not_complete">false</string>
 
     <string name="add_waypoint">Add a Waypoint</string>
     <string name="waypoint_title">Waypoints</string>

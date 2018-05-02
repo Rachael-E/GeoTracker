@@ -151,6 +151,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/amethysta"
             android:text="@string/Quaternary"
+            android:onClick="onCheckBoxClicked"
             android:textSize="12sp" />
 
         <CheckBox
@@ -160,6 +161,8 @@
             android:layout_weight="1"
             android:fontFamily="@font/amethysta"
             android:text="@string/Palaeogene"
+            android:onClick="onCheckBoxClicked"
+
             android:textSize="12sp" />
 
         <CheckBox
@@ -169,6 +172,8 @@
             android:layout_weight="1"
             android:fontFamily="@font/amethysta"
             android:text="@string/Jurassic"
+            android:onClick="onCheckBoxClicked"
+
             android:textSize="12sp" />
 
         <CheckBox
@@ -178,6 +183,8 @@
             android:layout_weight="1"
             android:fontFamily="@font/amethysta"
             android:text="@string/Triassic"
+            android:onClick="onCheckBoxClicked"
+
             android:textSize="12sp" />
     </LinearLayout>
 
@@ -225,6 +232,8 @@
             android:layout_weight="1"
             android:fontFamily="@font/amethysta"
             android:text="@string/Basalt"
+            android:onClick="onCheckBoxClicked"
+
             android:textSize="12sp" />
 
         <CheckBox
@@ -234,6 +243,8 @@
             android:layout_weight="1"
             android:fontFamily="@font/amethysta"
             android:text="@string/Sandstone"
+            android:onClick="onCheckBoxClicked"
+
             android:textSize="12sp" />
 
         <CheckBox
@@ -243,12 +254,14 @@
             android:layout_weight="1"
             android:fontFamily="@font/amethysta"
             android:text="@string/Mudstone"
+            android:onClick="onCheckBoxClicked"
+
             android:textSize="12sp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="206dp"
+        android:layout_width="99dp"
         android:layout_height="34dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -262,11 +275,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.917">
 
+        <RadioButton
+            android:id="@+id/radioButtonWalk"
+            android:layout_width="162dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onRadioButtonClicked"
+
+            android:text="@string/Walk" />
+
+
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="206dp"
+        android:layout_width="144dp"
         android:layout_height="35dp"
         android:layout_marginBottom="72dp"
         android:layout_marginEnd="8dp"
@@ -279,21 +303,14 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <RadioButton
-            android:id="@+id/radioButtonComplete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/amethysta"
-            android:text="@string/complete"
-            android:textSize="12sp" />
-
-        <RadioButton
             android:id="@+id/radioButtonNotComplete"
-            android:layout_width="wrap_content"
+            android:layout_width="157dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/amethysta"
             android:text="@string/not_complete"
+            android:onClick="onRadioButtonClicked"
+
             android:textSize="12sp" />
     </LinearLayout>
 
