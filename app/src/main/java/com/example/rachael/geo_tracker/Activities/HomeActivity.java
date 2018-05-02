@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.example.rachael.geo_tracker.Models.GeoTracker;
 import com.example.rachael.geo_tracker.R;
+import com.example.rachael.geo_tracker.SeedFile.GeoActivitySeed;
 import com.example.rachael.geo_tracker.SharedPreferences.SharedPreferencesHelper;
 
 public class HomeActivity extends AppCompatActivity {
@@ -16,6 +17,7 @@ public class HomeActivity extends AppCompatActivity {
     Button findWalkButton;
     Button completedWalkButton;
     Button newWalkButton;
+    GeoTracker geoTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,15 @@ public class HomeActivity extends AppCompatActivity {
         findWalkButton = findViewById(R.id.findAWalkButtonId);
         completedWalkButton = findViewById(R.id.viewCompletedWalksButtonId);
         newWalkButton = findViewById(R.id.createNewWalkButtonId);
+//      //go to SharedPref to get the existing geoTracker
+        geoTracker = SharedPreferencesHelper.loadApplicationState(this);
+//        if it's null create a new GeoTracker
+        if(geoTracker == null){
+            geoTracker = new GeoTracker( GeoActivitySeed.seedEverything() , 0,0);
+            SharedPreferencesHelper.saveApplicationState(this, geoTracker);
+        }
+
+
     }
 
 

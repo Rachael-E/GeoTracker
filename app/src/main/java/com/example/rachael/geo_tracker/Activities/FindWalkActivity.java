@@ -24,11 +24,9 @@ public class FindWalkActivity extends AppCompatActivity {
 
         //if geo tracker is completely new
         //TODO what happens if I add a walk in AddNewWalk though? Will the new walk be wiped and replaced with the seed?
-        GeoTracker geoTracker = new GeoTracker( GeoActivitySeed.seedEverything() , 0,0);
+//        GeoTracker geoTracker = new GeoTracker( GeoActivitySeed.seedEverything() , 0,0);
 
-        SharedPreferencesHelper.loadApplicationState(this);
-
-        SharedPreferencesHelper.saveApplicationState(this, geoTracker);
+        GeoTracker geoTracker = SharedPreferencesHelper.loadApplicationState(this);
 
         ExcursionSeedAdapter excursionAdapter = new ExcursionSeedAdapter(this, geoTracker.getGeoExcursions());
 
