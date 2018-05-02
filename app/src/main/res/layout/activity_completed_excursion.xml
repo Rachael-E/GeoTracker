@@ -7,6 +7,16 @@
     android:background="@color/background_color"
     tools:context=".Activities.CompletedExcursionActivity">
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="999dp"
+        android:layout_height="825dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.681"
+        app:srcCompat="@drawable/storr_colour" />
+
     <TextView
         android:id="@+id/completedExcursionsTitleId"
         android:layout_width="366dp"
@@ -70,8 +80,8 @@
         android:fontFamily="@font/amethysta"
         android:gravity="center"
         android:text="@string/points_counter"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -90,12 +100,13 @@
         android:fontFamily="@font/amethysta"
         android:gravity="center"
         android:text="@string/walk_counter"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/completedListViewId"
         app:layout_constraintVertical_bias="0.523" />
+
 </android.support.constraint.ConstraintLayout>
