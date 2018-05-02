@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GeoTrax</string>
+    <string name="app_name">GeoTraxApp</string>
     <string name="welcome_text">Find and track geological excursions with GeoTrax!\n\nTap Find an Excursion to look for an excursion to complete.</string>
     <string name="view_walk_button">Find an Excursion</string>
     <string name="view_completed_walks_button">View Completed Excursions</string>
@@ -33,7 +33,7 @@
 
     <string name="choose_if_walk_complete">Has this excursion been completed?</string>
     <string name="complete">Complete</string>
-    <string name="not_complete">false</string>
+    <string name="not_complete">Not Complete</string>
 
     <string name="add_waypoint">Add a Waypoint</string>
     <string name="waypoint_title">Waypoints</string>

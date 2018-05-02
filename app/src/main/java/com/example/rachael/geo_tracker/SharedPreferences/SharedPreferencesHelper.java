@@ -24,4 +24,10 @@ public class SharedPreferencesHelper {
         GeoTracker applicationState = gson.fromJson(sharedPreferences.getString("APPLICATION_STATE", "{}"), GeoTracker.class );
         return applicationState;
     }
+
+    public static void deleteApplicationState(Context context){
+        SharedPreferences.Editor editor = context.getSharedPreferences(context.getString(R.string.app_name), Context.MODE_PRIVATE).edit();
+        editor.clear();
+        editor.commit();
+    }
 }

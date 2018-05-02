@@ -14,6 +14,8 @@ public class GeoExcursion implements Serializable {
     private ExcursionType excursionType;
     private boolean isComplete;
 
+    public GeoExcursion() {}
+
     public GeoExcursion(String title, String summary, ArrayList<GeoInfo> geologyInfo, ArrayList<WayPoints> wayPoints, ExcursionType excursionType, boolean isComplete) {
         this.title = title;
         this.summary = summary;

@@ -76,6 +76,7 @@
         android:layout_marginStart="148dp"
         android:layout_marginTop="401dp"
         android:fontFamily="@font/amethysta"
+        android:onClick="onSaveExcursionButtonClicked"
         android:text="@string/save_new_excursion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -108,24 +109,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/enter_excursion_title" />
+            android:hint="@string/enter_excursion_title"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/editExcursionSummaryId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/enter_excursion_summary" />
+            android:hint="@string/enter_excursion_summary"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/editWayPointId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/add_waypoint" />
+            android:hint="@string/add_waypoint"
+            android:inputType="textPersonName" />
 
     </LinearLayout>
 
@@ -308,10 +309,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/amethysta"
-            android:text="@string/not_complete"
             android:onClick="onRadioButtonClicked"
+            android:text="@string/not_complete"
 
-            android:textSize="12sp" />
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

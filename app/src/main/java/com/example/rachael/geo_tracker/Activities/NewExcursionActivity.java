@@ -1,5 +1,6 @@
 package com.example.rachael.geo_tracker.Activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,7 @@ import com.example.rachael.geo_tracker.Models.GeoInfo;
 import com.example.rachael.geo_tracker.Models.GeoTracker;
 import com.example.rachael.geo_tracker.Models.WayPoints;
 import com.example.rachael.geo_tracker.R;
+import com.example.rachael.geo_tracker.SharedPreferences.SharedPreferencesHelper;
 import com.example.rachael.geo_tracker.Types.EraType;
 import com.example.rachael.geo_tracker.Types.ExcursionType;
 import com.example.rachael.geo_tracker.Types.RockType;
@@ -20,8 +22,6 @@ import java.util.ArrayList;
 
 public class NewExcursionActivity extends AppCompatActivity {
 
-    GeoExcursion geoExcursionToAdd;
-    GeoTracker geoTracker;
     ArrayList<WayPoints> newArrayListOfWayPoints;
     WayPoints wayPointStringToAdd;
     RockType rockType;
@@ -31,6 +31,7 @@ public class NewExcursionActivity extends AppCompatActivity {
     GeoInfo geoInfo;
     ArrayList<GeoInfo> geoInfoArrayList;
     ExcursionType excursionType;
+    boolean isComplete = true;
 
     private EditText excursionTitle;
     private EditText excursionSummary;
@@ -70,8 +71,12 @@ public class NewExcursionActivity extends AppCompatActivity {
         walkButton = findViewById(R.id.radioButtonWalk);
         incompleteButton = findViewById(R.id.radioButtonNotComplete);
 
-    }
+        rockTypeArrayList = new ArrayList<>();
+        eraTypeArrayList = new ArrayList<>();
+        geoInfoArrayList = new ArrayList<>();
+        newArrayListOfWayPoints = new ArrayList<>();
 
+    }
 
     public void onRadioButtonClicked(View view){
 
@@ -80,13 +85,13 @@ public class NewExcursionActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.radioButtonWalk:
                 if (checked)
-                    ExcursionType.valueOf(walkButton.getText().toString().toUpperCase());
+//                    ExcursionType.valueOf(walkButton.getText().toString().toUpperCase());
+                excursionType = ExcursionType.WALK;
 
 
                 // this would return a string of False: but how to make that a boolean without the text saying false?
             case R.id.radioButtonNotComplete:
-                if (checked)
-                    incompleteButton.getText();
+                if (checked) isComplete = false;
 
         }
     }
@@ -98,51 +103,53 @@ public class NewExcursionActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.checkBoxQuaternary:
                 if (checked)
-                   //EraType quaternaryCheckBox = EraType.QUATERNARY;
-                    eraTypeArrayList.add(EraType.valueOf(quaternaryCheckBox.getText().toString().toUpperCase()));
+//                    eraTypeArrayList.add(EraType.valueOf(quaternaryCheckBox.getText().toString().toUpperCase()));
+                    eraTypeArrayList.add(EraType.QUATERNARY);
 
             case R.id.checkBoxPalaeogene:
                 if (checked)
-
-                    eraTypeArrayList.add(EraType.valueOf(palaeogeneCheckBox.getText().toString().toUpperCase()));
-
+                    eraTypeArrayList.add(EraType.PALAEOGENE);
 
             case R.id.checkBoxJurassic:
                 if (checked)
-                    eraTypeArrayList.add(EraType.valueOf(jurassicCheckBox.getText().toString().toUpperCase()));
+                    eraTypeArrayList.add(EraType.JURASSIC);
 
             case R.id.checkBoxTriassic:
                 if (checked)
-                    eraTypeArrayList.add(EraType.valueOf(triassicCheckBox.getText().toString().toUpperCase()));
+                    eraTypeArrayList.add(EraType.TRIASSIC);
 
-                case R.id.checkBoxBasalt:
+
+            case R.id.checkBoxBasalt:
                 if (checked)
-                rockTypeArrayList.add(RockType.valueOf(basaltCheckBox.getText().toString().toUpperCase()));
+                    rockTypeArrayList.add(RockType.BASALT);
 
                 case R.id.checkBoxSandstone:
                 if (checked)
-
-                rockTypeArrayList.add(RockType.valueOf(sandstoneCheckBox.getText().toString().toUpperCase()));
+                    rockTypeArrayList.add(RockType.SANDSTONE);
 
                 case R.id.checkBoxMudstone:
                 if (checked)
-                rockTypeArrayList.add(RockType.valueOf(mudstoneCheckBox.getText().toString().toUpperCase()));
+                rockTypeArrayList.add(RockType.MUDSTONE);
 
 
         }
     }
 
 
-
-
     public void onSaveExcursionButtonClicked(View button) {
 
         String getExcursionTitle = excursionTitle.getText().toString();
         String getExcursionSummary = excursionSummary.getText().toString();
-
         String wayPointString = excursionWayPoint.getText().toString();
-        wayPointStringToAdd.setDescription(wayPointString);
+
+        wayPointStringToAdd = new WayPoints(wayPointString);
         newArrayListOfWayPoints.add(wayPointStringToAdd);
+
+        geoInfo = new GeoInfo(eraTypeArrayList, rockTypeArrayList);
+        geoInfoArrayList.add(geoInfo);
+
+
+
 
         // get an enum when a checkbox is clicked
         // set that enum into GeoInfo
@@ -154,13 +161,20 @@ public class NewExcursionActivity extends AppCompatActivity {
 
 //        quaternaryCheckBox = eraType.setGeologyPeriod();
 
-
+        GeoExcursion geoExcursionToAdd = new GeoExcursion();
         geoExcursionToAdd.setTitle(getExcursionTitle);
         geoExcursionToAdd.setSummary(getExcursionSummary);
         geoExcursionToAdd.setWayPoints(newArrayListOfWayPoints);
+        geoExcursionToAdd.setGeologyInfo(geoInfoArrayList);
+        geoExcursionToAdd.setExcursionType(excursionType);
+        geoExcursionToAdd.setComplete(isComplete);
 
+        GeoTracker geoTracker = SharedPreferencesHelper.loadApplicationState(this);
+        geoTracker.addGeoExcursions(geoExcursionToAdd);
 
-
+        SharedPreferencesHelper.saveApplicationState(this, geoTracker);
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
 
     }
 
