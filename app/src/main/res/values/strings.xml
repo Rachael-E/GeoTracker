@@ -41,5 +41,9 @@
     <string name="walk_counter">Excursions Completed</string>
     <string name="points_counter">Points Collected</string>
 
+    <string name="remove_excursion_button">Remove</string>
+
+
+
 
 </resources>
