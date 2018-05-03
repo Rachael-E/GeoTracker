@@ -1,10 +1,12 @@
 package com.example.rachael.geo_tracker.Activities;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
@@ -29,5 +31,11 @@ public class GeologyMapActivity extends AppCompatActivity {
         webSettings.setJavaScriptEnabled(true);
         bgsWebView.loadUrl("http://www.largeimages.bgs.ac.uk/iip/mapsportal.html?id=1004374");
 
+    }
+
+    public void onReturnHomeButtonClicked(View button){
+        Intent intent = new Intent(this, HomeActivity.class);
+
+        startActivity(intent);
     }
 }
