@@ -33,7 +33,7 @@ ActionBar actionBar;
         setContentView(R.layout.activity_home);
 
         actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#838c6b")));
 
         findWalkButton = findViewById(R.id.findAWalkButtonId);
         completedWalkButton = findViewById(R.id.viewCompletedWalksButtonId);
@@ -49,24 +49,6 @@ ActionBar actionBar;
             SharedPreferencesHelper.saveApplicationState(this, geoTracker);
         }
 
-    }
-
-        @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.activity_menu_home, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menuHome:
-                startActivity(new Intent(this, HomeActivity.class));
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
 

@@ -61,7 +61,7 @@ public class NewExcursionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_excursion);
 
         actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#838c6b")));
 
         excursionTitle = findViewById(R.id.editExcursionTitleId);
         excursionSummary = findViewById(R.id.editExcursionSummaryId);

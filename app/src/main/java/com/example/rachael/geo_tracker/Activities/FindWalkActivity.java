@@ -6,6 +6,9 @@ import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
@@ -22,12 +25,38 @@ public class FindWalkActivity extends AppCompatActivity {
 
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.activity_menu_home, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menuHome:
+                startActivity(new Intent(this, HomeActivity.class));
+                return true;
+
+            case R.id.menuAddExcursions:
+                startActivity(new Intent(this, NewExcursionActivity.class));
+                return true;
+
+            case R.id.menuCompletedExcursions:
+                startActivity(new Intent(this, CompletedExcursionActivity.class));
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_walk);
 
         actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#838c6b")));
 
 
         //if geo tracker is completely new

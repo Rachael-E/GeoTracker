@@ -6,6 +6,9 @@ import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -28,7 +31,7 @@ public class ExcursionDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_excursion_detail);
 
         actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#838c6b")));
 
         Intent intent = getIntent();
         geoExcursion = (GeoExcursion) intent.getSerializableExtra("geoexcursion");
@@ -59,6 +62,36 @@ public class ExcursionDetailActivity extends AppCompatActivity {
 
     }
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.activity_menu_excursion_detail, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menuHome:
+                startActivity(new Intent(this, HomeActivity.class));
+                return true;
+
+            case R.id.menuAddExcursions:
+                startActivity(new Intent(this, NewExcursionActivity.class));
+                return true;
+
+            case R.id.menuCompletedExcursions:
+                startActivity(new Intent(this, CompletedExcursionActivity.class));
+                return true;
+
+            case R.id.menuFindExcursion:
+                startActivity(new Intent(this, FindWalkActivity.class));
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     public void onCompletedButtonClick(View button) {
 

@@ -28,7 +28,7 @@ public class CompletedExcursionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_completed_excursion);
 
         actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#838c6b")));
 
         Intent intent = getIntent();
         completedGeoExcursionToAddToCompletedList = (GeoExcursion) intent.getSerializableExtra("completedGeoexcursion");
