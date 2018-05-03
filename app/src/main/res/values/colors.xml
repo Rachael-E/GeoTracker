@@ -6,6 +6,9 @@
     <color name="background_color">#b6800e</color>
 
     <color name="background_excursionTitle_list_color">#e9d5a2</color>
+    <color name="excursion_info">#be986c</color>
+    <color name="background_excursion_detail">#ddbcaf</color>
+    <color name="background_excursion_detail_extra">#CCcdd9b2</color>
 
     <color name="GeoTrax">#CCa9a18a</color>
 
