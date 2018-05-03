@@ -105,31 +105,43 @@ public class NewExcursionActivity extends AppCompatActivity {
                 if (checked)
 //                    eraTypeArrayList.add(EraType.valueOf(quaternaryCheckBox.getText().toString().toUpperCase()));
                     eraTypeArrayList.add(EraType.QUATERNARY);
+                break;
 
             case R.id.checkBoxPalaeogene:
                 if (checked)
                     eraTypeArrayList.add(EraType.PALAEOGENE);
+                break;
+
 
             case R.id.checkBoxJurassic:
                 if (checked)
                     eraTypeArrayList.add(EraType.JURASSIC);
+                break;
+
 
             case R.id.checkBoxTriassic:
                 if (checked)
                     eraTypeArrayList.add(EraType.TRIASSIC);
+                break;
 
 
             case R.id.checkBoxBasalt:
                 if (checked)
                     rockTypeArrayList.add(RockType.BASALT);
+                break;
 
-                case R.id.checkBoxSandstone:
+
+            case R.id.checkBoxSandstone:
                 if (checked)
                     rockTypeArrayList.add(RockType.SANDSTONE);
+                break;
 
-                case R.id.checkBoxMudstone:
+
+            case R.id.checkBoxMudstone:
                 if (checked)
                 rockTypeArrayList.add(RockType.MUDSTONE);
+                break;
+
 
 
         }

@@ -21,7 +21,7 @@ public class GeoInfo implements Serializable {
     }
 
     public String getEraTypeNames() {
-        String eraNames = "Geological Periods: ";
+        String eraNames = "Geological Periods:\n";
 
         for (EraType era: getEraTypes()) {
             eraNames += era.getGeologyPeriod() + ", ";
@@ -37,7 +37,7 @@ public class GeoInfo implements Serializable {
     }
 
     public String getRockTypeNames() {
-        String rockNames = "Rock types: ";
+        String rockNames = "Rock types:\n";
 
         for (RockType rock: getRockTypes()) {
             rockNames += rock.getRockType() + ", ";

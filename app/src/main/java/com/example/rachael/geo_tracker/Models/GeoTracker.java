@@ -52,4 +52,8 @@ public class GeoTracker implements Serializable {
         completedGeoExcursions.remove(geoExcursion);
     }
 
+    public void removeGeoExcursion(GeoExcursion geoExcursion){
+        geoExcursions.remove(geoExcursion);
+    }
+
 }

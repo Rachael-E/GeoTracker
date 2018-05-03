@@ -22,7 +22,7 @@ public class ExcursionDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_excursion_detail);
-        
+
         Intent intent = getIntent();
         geoExcursion = (GeoExcursion) intent.getSerializableExtra("geoexcursion");
 
@@ -64,6 +64,18 @@ public class ExcursionDetailActivity extends AppCompatActivity {
         intent.putExtra("completedGeoexcursion", this.geoExcursion);
 
         startActivity(intent);
+    }
+
+    public void onRemoveExcursionButtonClicked(View button) {
+
+        GeoTracker geoTracker = SharedPreferencesHelper.loadApplicationState(this);
+        geoTracker.removeGeoExcursion(geoExcursion);
+        SharedPreferencesHelper.saveApplicationState(this, geoTracker);
+
+        Intent intent = new Intent(this, FindWalkActivity.class);
+
+        startActivity(intent);
+
     }
 
 
