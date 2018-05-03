@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/georedbackground"
+    android:background="@drawable/geobackround1"
     tools:context=".Activities.ExcursionDetailActivity">
 
     <TextView
@@ -39,7 +39,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="196dp"
         android:layout_marginTop="64dp"
-        android:background="@color/excursion_info"
+        android:background="@color/white_transparent"
         android:fontFamily="@font/amethysta"
         android:gravity="top|center"
         android:text="TextView"
@@ -62,7 +62,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="64dp"
-        android:background="@color/excursion_info"
+        android:background="@color/white_transparent"
         android:fontFamily="@font/amethysta"
         android:gravity="top|center"
         android:text="TextView"
@@ -84,7 +84,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:background="@color/excursion_info"
+        android:background="@color/white_transparent"
         android:fontFamily="@font/amethysta"
         android:gravity="center"
         android:text="TextView"

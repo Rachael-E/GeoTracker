@@ -6,7 +6,8 @@
     <color name="background_color">#b6800e</color>
 
     <color name="background_excursionTitle_list_color">#e9d5a2</color>
-    <color name="excursion_info">#be986c</color>
+    <color name="excursion_info">#CCbe986c</color>
+    <color name="white_transparent">#CCeadac7</color>
     <color name="background_excursion_detail">#ddbcaf</color>
     <color name="background_excursion_detail_extra">#CCcdd9b2</color>
 

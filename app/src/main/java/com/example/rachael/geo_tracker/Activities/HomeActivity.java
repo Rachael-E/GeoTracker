@@ -1,6 +1,9 @@
 package com.example.rachael.geo_tracker.Activities;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,22 +23,23 @@ public class HomeActivity extends AppCompatActivity {
     Button findWalkButton;
     Button completedWalkButton;
     Button newWalkButton;
-    //GeoTracker geoTracker;
 
-//
 
+ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
+
         findWalkButton = findViewById(R.id.findAWalkButtonId);
         completedWalkButton = findViewById(R.id.viewCompletedWalksButtonId);
         newWalkButton = findViewById(R.id.createNewWalkButtonId);
 
 
-//        SharedPreferencesHelper.deleteApplicationState(this);
 //      //go to SharedPref to get the existing geoTracker
        GeoTracker geoTracker = SharedPreferencesHelper.loadApplicationState(this);
 //        if it's null create a new GeoTracker
@@ -49,7 +53,6 @@ public class HomeActivity extends AppCompatActivity {
 
         @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
 
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.activity_menu_home, menu);

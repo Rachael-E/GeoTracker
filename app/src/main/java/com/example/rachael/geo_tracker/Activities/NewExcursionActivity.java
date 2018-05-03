@@ -1,6 +1,9 @@
 package com.example.rachael.geo_tracker.Activities;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -49,11 +52,16 @@ public class NewExcursionActivity extends AppCompatActivity {
     private RadioButton walkButton;
     private RadioButton incompleteButton;
 
+    ActionBar actionBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_excursion);
+
+        actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
 
         excursionTitle = findViewById(R.id.editExcursionTitleId);
         excursionSummary = findViewById(R.id.editExcursionSummaryId);

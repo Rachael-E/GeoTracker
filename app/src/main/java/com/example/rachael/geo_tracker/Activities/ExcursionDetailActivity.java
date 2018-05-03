@@ -1,6 +1,9 @@
 package com.example.rachael.geo_tracker.Activities;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,11 +20,15 @@ import com.example.rachael.geo_tracker.SharedPreferences.SharedPreferencesHelper
 public class ExcursionDetailActivity extends AppCompatActivity {
 
     GeoExcursion geoExcursion;
+    ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_excursion_detail);
+
+        actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
 
         Intent intent = getIntent();
         geoExcursion = (GeoExcursion) intent.getSerializableExtra("geoexcursion");
@@ -69,7 +76,8 @@ public class ExcursionDetailActivity extends AppCompatActivity {
     public void onRemoveExcursionButtonClicked(View button) {
 
         GeoTracker geoTracker = SharedPreferencesHelper.loadApplicationState(this);
-        geoTracker.removeGeoExcursion(geoExcursion);
+//        geoTracker.removeGeoExcursion(geoExcursion);
+        geoTracker.removeGeoExcursionByTitle(geoExcursion.getTitle());
         SharedPreferencesHelper.saveApplicationState(this, geoTracker);
 
         Intent intent = new Intent(this, FindWalkActivity.class);

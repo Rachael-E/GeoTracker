@@ -102,6 +102,14 @@ public class GeoTrackerTest {
         assertEquals(0, geoTracker1.getCompletedGeoExcursions().size());
     }
 
+    @Test
+    public void canRemoveAnExcursionFromGeoExcursionsByTitle(){
+        geoTracker1.addGeoExcursions(geoExcursion2);
+        geoTracker1.removeGeoExcursionByTitle("The Carsaig Arches");
+        assertEquals(1, geoTracker1.getGeoExcursions().size());
+        assertEquals("The Fossil Tree", geoTracker1.getGeoExcursions().get(0).getTitle());
+    }
+
 
 
 

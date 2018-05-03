@@ -56,4 +56,16 @@ public class GeoTracker implements Serializable {
         geoExcursions.remove(geoExcursion);
     }
 
+    public void removeGeoExcursionByTitle(String titleToFind){
+        GeoExcursion geoExcursionToRemove = null;
+        for (GeoExcursion currentGeoExcursion : geoExcursions){
+            if (titleToFind.equals(currentGeoExcursion.getTitle())){
+                geoExcursionToRemove = currentGeoExcursion;
+            }
+        }
+        geoExcursions.remove(geoExcursionToRemove);
+
+    }
+
+
 }
