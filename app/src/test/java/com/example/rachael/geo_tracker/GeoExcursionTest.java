@@ -48,8 +48,10 @@ public class GeoExcursionTest {
         rockList.add(rocktype2);
 
         EraType eraType1 = EraType.PALAEOGENE;
+        EraType eraType2 = EraType.JURASSIC;
         ArrayList<EraType>eraList = new ArrayList<>();
         eraList.add(eraType1);
+        eraList.add(eraType2);
 
         geoInfo1 = new GeoInfo(eraList, rockList);
         geoInfoList = new ArrayList<>();
@@ -107,6 +109,22 @@ public class GeoExcursionTest {
     public void canSetCompleteStatusToTrue(){
         geoExcursion1.setCompleteToTrue();
         assertEquals(true, geoExcursion1.getCompleteStatus());
+    }
+
+    @Test
+    public void canGetEraTypeSize(){
+        assertEquals(2 ,geoExcursion1.getGeologyInfo().get(0).getEraTypes().size());
+    }
+
+    @Test
+    public void canGetEraTypeNames(){
+//        assertEquals("Geological Periods: Palaeogene, Jurassic" ,geoExcursion1.getGeologyInfo().get(0).getEraTypeNames());
+        assertEquals("Geological Periods: Palaeogene, Jurassic" ,geoExcursion1.getNameOfPeriodInGeologyInfo());
+    }
+
+    @Test
+    public void canGetRockTypeNames(){
+        assertEquals("Rock types: Basalt, Sandstone", geoExcursion1.getNameOfRockTypesInGeologyInfo());
     }
 
 

@@ -22,32 +22,30 @@ public class ExcursionDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_excursion_detail);
-
-
+        
         Intent intent = getIntent();
         geoExcursion = (GeoExcursion) intent.getSerializableExtra("geoexcursion");
 
-
+        // Gets the title of the excursion //
         TextView excursionTitleTextView = findViewById(R.id.excursionDetailTitleTextViewId);
         excursionTitleTextView.setText(geoExcursion.getTitle());
 
-        //TODO: tidy this up to make a method in geology info which returns all era types with name and period age
+        // Gets the geological period names of each EraType item within the GeoInfo ArrayList //
         TextView excursionEraTextView = findViewById(R.id.eraTypeTextViewId);
-        String returnGeologyPeriod = geoExcursion.getGeologyInfo().get(0).getEraTypes().get(0).getGeologyPeriod();
-        excursionEraTextView.setText(returnGeologyPeriod);
-//TODO: Add a new string to explain what this textview is (rocktype)
-    // Set up for loop to get the appropriate components
+        String returnGeologyPeriodNames = geoExcursion.getNameOfPeriodInGeologyInfo();
+        excursionEraTextView.setText(returnGeologyPeriodNames);
+
+        // Get the rock names of each RockType item within the GeoInfo ArrayList //
         TextView excursionRockTextView = findViewById(R.id.rockTypeTextViewId);
-        String getFirstRockType = geoExcursion.getGeologyInfo().get(0).getRockTypes().get(0).getRockType();
-        //String getSecondRockType = geoExcursion.getGeologyInfo().get(0).getRockTypes().get(1).getRockType();
-        //String rockTypes = getFirstRockType + ", " + getSecondRockType;
+        String getFirstRockType = geoExcursion.getNameOfRockTypesInGeologyInfo();
         excursionRockTextView.setText(getFirstRockType);
 
+        // Get the Activity Type of the excursion //
         TextView excursionType = findViewById(R.id.excursionDetailTypeTextViewId);
         excursionType.setText(geoExcursion.getExcursionType().getActivityType());
 
+        // Use this adapter for the waypoints for the excursion //
         WayPointAdapter wayPointAdapter = new WayPointAdapter(this, geoExcursion.getWayPoints());
-
         ListView listView = findViewById(R.id.wayPointListViewId);
         listView.setAdapter(wayPointAdapter);
 
@@ -55,9 +53,7 @@ public class ExcursionDetailActivity extends AppCompatActivity {
     }
 
 
-
-
-    public void onCompletedButtonClick(View button){
+    public void onCompletedButtonClick(View button) {
 
         GeoTracker geoTracker = SharedPreferencesHelper.loadApplicationState(this);
         geoTracker.addToCompletedGeoExcursions(geoExcursion);

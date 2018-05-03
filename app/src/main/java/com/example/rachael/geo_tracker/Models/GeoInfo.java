@@ -20,8 +20,31 @@ public class GeoInfo implements Serializable {
         return eraTypes;
     }
 
+    public String getEraTypeNames() {
+        String eraNames = "Geological Periods: ";
+
+        for (EraType era: getEraTypes()) {
+            eraNames += era.getGeologyPeriod() + ", ";
+        }
+
+        String eraNamesNeat = eraNames.substring(0, eraNames.length() -2);
+        return eraNamesNeat;
+
+    }
+
     public ArrayList<RockType> getRockTypes() {
         return rockTypes;
+    }
+
+    public String getRockTypeNames() {
+        String rockNames = "Rock types: ";
+
+        for (RockType rock: getRockTypes()) {
+            rockNames += rock.getRockType() + ", ";
+        }
+
+        String rockNamesNeat = rockNames.substring(0, rockNames.length() -2);
+        return rockNamesNeat;
     }
 
     public void setEraTypes(ArrayList<EraType> eraTypes) {

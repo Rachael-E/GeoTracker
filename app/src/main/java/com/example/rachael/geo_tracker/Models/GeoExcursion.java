@@ -51,6 +51,25 @@ public class GeoExcursion implements Serializable {
         return geologyInfo;
     }
 
+    public String getNameOfPeriodInGeologyInfo() {
+        String periodName = "";
+
+        for (int i = 0; i < geologyInfo.size(); i++) {
+           periodName += geologyInfo.get(i).getEraTypeNames();
+        }
+        return periodName;
+    }
+
+    public String getNameOfRockTypesInGeologyInfo() {
+        String rockName = "";
+
+        for (int i =0; i < geologyInfo.size(); i++) {
+            rockName += geologyInfo.get(i).getRockTypeNames();
+        }
+        return rockName;
+    }
+
+
     public ArrayList<WayPoints> getWayPoints() {
         return wayPoints;
     }
