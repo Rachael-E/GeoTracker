@@ -43,7 +43,8 @@
 
     <string name="remove_excursion_button">Remove</string>
 
-
+    <string name="access_geology_maps">Geology Map</string>
+    <string name="mull_geology_map">Mull Geology Map</string>
 
 
 </resources>

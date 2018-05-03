@@ -35,12 +35,12 @@
 
     <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="189dp"
+        android:layout_height="198dp"
         android:layout_marginEnd="18dp"
         android:layout_marginLeft="19dp"
         android:layout_marginRight="18dp"
         android:layout_marginStart="19dp"
-        android:layout_marginTop="248dp"
+        android:layout_marginTop="212dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -100,10 +100,9 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:background="@color/GeoTrax"
+        android:background="@color/white_transparent"
         android:fontFamily="@font/amethysta"
         android:gravity="center"
-        android:text="@string/GeoTrax"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="30sp"
@@ -111,6 +110,38 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="287dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/geotrax_logo" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="126dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="28dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:background="@color/colorAccent"
+        android:fontFamily="@font/amethysta"
+        android:onClick="onGeologyMapClick"
+        android:text="@string/access_geology_maps"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

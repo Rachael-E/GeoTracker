@@ -73,6 +73,13 @@ ActionBar actionBar;
 
         startActivity(intent);
     }
+
+    public void onGeologyMapClick(View button) {
+
+        Intent intent = new Intent(this, GeologyMapActivity.class);
+
+        startActivity(intent);
+    }
 }
 
 
