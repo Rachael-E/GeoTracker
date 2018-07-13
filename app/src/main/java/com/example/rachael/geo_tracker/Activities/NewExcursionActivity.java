@@ -111,7 +111,6 @@ public class NewExcursionActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.checkBoxQuaternary:
                 if (checked)
-//                    eraTypeArrayList.add(EraType.valueOf(quaternaryCheckBox.getText().toString().toUpperCase()));
                     eraTypeArrayList.add(EraType.QUATERNARY);
                 break;
 

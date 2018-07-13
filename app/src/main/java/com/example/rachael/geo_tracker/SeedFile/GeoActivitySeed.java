@@ -16,7 +16,7 @@ public class GeoActivitySeed {
 
         ArrayList<GeoExcursion> list;
 
-        // adding rock types to the rockList array list for feeding into GeoInfo. Naming based on which walk they will belong to (Fossil = "The Fossil Tree", Arches = "Carsaig Arches").
+        // adding rock types to the rockList array list for feeding into GeoInfo. Naming based on which walk they will belong to (rockListFossil = "The Fossil Tree" walk, rockListArches = "Carsaig Arches").
         RockType rocktype1 = RockType.BASALT;
         RockType rocktype2 = RockType.SANDSTONE;
         ArrayList<RockType> rockListFossil = new ArrayList<>();
